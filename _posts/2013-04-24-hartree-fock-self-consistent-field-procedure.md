@@ -43,7 +43,7 @@ def eint(a,b,c,d):
     return abcd
 
 # Return Value of two electron integral  
-# Example: (12|34) = tei(1,2,3,4)  
+# Example: (12\vert 34) = tei(1,2,3,4)  
 # I use chemists notation for the SCF procedure.  
 def tei(a,b,c,d):  
     return twoe.get(eint(a,b,c,d),0.0)
@@ -176,11 +176,11 @@ G = np.zeros((dim,dim)) # The G matrix is used to make the Fock matrix
 while DELTA > convergence:  
     F = makefock(Hcore,P,dim)  
    # print "F = \n", F  
-    Fprime = fprime(S\_minhalf,F)  
+    Fprime = fprime(S_minhalf,F)  
    # print "Fprime = \n", Fprime
 
     E,Cprime = np.linalg.eigh(Fprime)  
-    C = np.dot(S\_minhalf,Cprime)  
+    C = np.dot(S_minhalf,Cprime)  
     E,C = diagonalize(Fprime)  
    # print "C = \n", C
 

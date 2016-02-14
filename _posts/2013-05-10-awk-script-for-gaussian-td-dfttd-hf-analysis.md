@@ -20,7 +20,7 @@ Enjoy!
 #!/bin/bash
 
 if ["$#" == "0"]; then  
- printf "\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\nTD_ANALYSIS\nPrints TDDFT Excitations above a given oscillator strength.\nUSE: td_analysis [LOG FILE] [MINIMUM OSCILLATOR STRENGTH]\n\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\n"  
+ printf "********************\nTD_ANALYSIS\nPrints TDDFT Excitations above a given oscillator strength.\nUSE: td_analysis [LOG FILE] [MINIMUM OSCILLATOR STRENGTH]\n********************\n"  
  exit 1  
 fi
 
@@ -37,7 +37,7 @@ gawk -v mult=$MULT 'BEGIN {format = "%-6s %-10s %10s %10s %6s\n"
  print "TD Analysis of",ARGV[1]}  
  /f=([0-9])/ { printf format, "\nEnergy [eV]:",$5, " ","Oscillator Strength:", substr($9,3,6)"\n ----------------------------------------------------------------"};  
  /->/ {printf format, "", $1$2$3,$4," ","("mult*100*($4)^2"%)"}  
- END { print "\nEnd of Analysis\n\n"}' $FILE | gawk -v oscil=$OSCIL 'RS="\n\n" {if($6 > oscil) {print $0"\n"}}'
+ END { print "\nEnd of Analysis\n\n"}' $FILE \vert  gawk -v oscil=$OSCIL 'RS="\n\n" {if($6 > oscil) {print $0"\n"}}'
 
 ~~~
 

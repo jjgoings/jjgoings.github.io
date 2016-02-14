@@ -5,7 +5,7 @@ title: MP2 with Python
 
 If you have the [transformed two electron integrals](http://wp.me/p3iFu0-5X) after a [Hartree-Fock](http://wp.me/p3iFu0-d) calculation, it's trivial to perform [Moller-Plesset](http://en.wikipedia.org/wiki/M%C3%B8ller%E2%80%93Plesset_perturbation_theory "Møller–Plesset perturbation theory") Second Order Perturbation theory (MP2). It is a non-iterative way to calculate [electron correlation](http://en.wikipedia.org/wiki/Electronic_correlation "Electronic correlation") energy (e.g. the energy obtained from having electrons "avoid" each other in molecules). The expression for MP2 energy contribution (in a _spin orbital_ basis) looks like this:
 
-$latex E\_{\rm MP2}=\frac{1}{4}\sum\_{ijab}\frac{|\langle ij ||ab \rangle|^2}{\epsilon\_i+\epsilon\_j-\epsilon\_a-\epsilon\_b}$
+$$ E\_{\rm MP2}=\frac{1}{4}\sum\_{ijab}\frac{|\langle ij ||ab \rangle|^2}{\epsilon\_i+\epsilon\_j-\epsilon\_a-\epsilon\_b}$$
 
 Where i and j are the indices of the occupied orbitals, and a and b are the indices of the virtual orbitals. The numerator is a "double-bar integral", which accounts for the Coulomb and Exchange energies between pairs of electrons, and the bottom are the orbital energies (eigenvalues). The numerator is a result of transforming the two-electron integrals to a molecular orbital basis, and the orbital energies are the result of a Hartree-Fock calculation. (Well, strictly speaking _all_ of this is from a Hartree-Fock calculation...) You can find a derivation of this in Szabo and Ostlund (1996).
 
@@ -13,13 +13,13 @@ This is actually one of the easiest electronic structure methods to program. It 
 
 Computationally speaking, we can see that we must construct four loops, to loop over our four indices. The first two must loop over occupied orbitals, and the second two must loop over virtual orbitals. I've attached some Python code that accomplishes this. Similar to the [CIS and TDHF code](http://wp.me/p3iFu0-6T), I have hard coded the transformed integrals for HeH+ in an [STO-3G](http://en.wikipedia.org/wiki/STO-nG_basis_sets "STO-nG basis sets") basis, at a bond length of 0.9295 Angstroms.
 
-```python  
+~~~python  
 #!/usr/bin/python
 
 ####################################  
 #  
-#&nbsp; Moller-Plesset Second Order  
-#&nbsp;&nbsp; Perturbation Theory (MP2)  
+#  Moller-Plesset Second Order  
+#   Perturbation Theory (MP2)  
 #  
 ####################################
 
@@ -29,7 +29,7 @@ import numpy as np
 
 ####################################  
 #  
-#&nbsp;&nbsp; FUNCTIONS  
+#   FUNCTIONS  
 #  
 ####################################
 
@@ -50,9 +50,9 @@ def teimo(a,b,c,d):
 
 ####################################  
 #  
-#&nbsp; INITIALIZE ORBITAL ENERGIES  
-#&nbsp; AND TRANSFORMED TWO ELECTRON  
-#&nbsp; INTEGRALS  
+#  INITIALIZE ORBITAL ENERGIES  
+#  AND TRANSFORMED TWO ELECTRON  
+#  INTEGRALS  
 #  
 ####################################
 
@@ -63,7 +63,7 @@ ttmo = {5.0: 0.94542695583037617, 12.0: 0.17535895381500544, 14.0: 0.12682234020
 
 ####################################################  
 #  
-#&nbsp; CONVERT SPATIAL TO SPIN ORBITAL MO  
+#  CONVERT SPATIAL TO SPIN ORBITAL MO  
 #  
 ####################################################
 
@@ -81,7 +81,7 @@ for p in range(1,dim+1):
 
 #####################################################  
 #  
-#&nbsp; Spin basis fock matrix eigenvalues  
+#  Spin basis fock matrix eigenvalues  
 #  
 #####################################################
 
@@ -92,7 +92,7 @@ for i in range(0,dim):
 
 ######################################################  
 #  
-#&nbsp; MP2 Calculation  
+#  MP2 Calculation  
 #  
 ######################################################
 
@@ -108,7 +108,7 @@ for i in range(0,Nelec):
 
 print "E(MP2) Correlation Energy = ", EMP2, " Hartrees"
 
-```
+~~~
 
 If you run the code you'll get a correlation energy of -0.00640 Hartrees. This is pretty small, and in fact most correlation energies are. Hartree-Fock does a good job at recovering ~99% of the energy of a molecule. However, correlation energies still translate to the order of 10 kcal/mol, which is chemically significant. This is why including correlation effects are so important. It's hard to make accurate predictions about reactivities with such large error bars when you neglect correlation. MP2 is an easy way to do so: much more accurate methods, like coupled-cluster methods, will give you energetics to chemical accuracy (chemical accuracy is ~0.1 kcal/mol). However, they are often very costly!
 

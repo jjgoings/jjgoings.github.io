@@ -47,7 +47,7 @@ def eint(a,b,c,d):
   return abcd
 
 # Return Value of spatial MO two electron integral
-# Example: (12|34) = tei(1,2,3,4)
+# Example: (12\vert 34) = tei(1,2,3,4)
 def teimo(a,b,c,d):
   return ttmo.get(eint(a,b,c,d),0.0e0)
 

@@ -9,4 +9,4 @@ That and now I can blog in markdown! From the terminal! And version control and 
 
 Welcome to the future, folks.
 
-Many of the old posts are here (and --- I think --- they look so much better!), but I'm still working out some of the finer details for the more math-intensive posts, since GitHub-flavored-markdown does not play well with LaTeX. Hopefully I'll have something up soon!
+Many of the old posts are here (and they look so much better!), but I'm still working out some of the finer details for the more math-intensive posts, since GitHub-flavored-markdown does not play well with LaTeX. Hopefully I'll have something up soon!
