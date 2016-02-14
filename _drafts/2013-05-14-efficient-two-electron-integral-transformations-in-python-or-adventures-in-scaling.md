@@ -1,0 +1,141 @@
+--- 
+layout: post 
+title: Efficient Two-Electron Integral Transformations in Python, or, Adventures in Scaling 
+---
+
+Low-scaling algorithms are important in any computational development, and this is never more true than in quantum chemistry. A golden example is in the integral transformation routines in electronic structure packages. Without a smarter algorithm, the transformations scale as $latex O(N^8)$ (yikes!!), making computations on large systems nearly impossible. But with a little thought, we can reign in that transformation to a (not _nearly_ as bad) $latex N^5$ method.
+
+If you have performed a [Hartree-Fock](http://en.wikipedia.org/wiki/Hartree%E2%80%93Fock_method "Hartree–Fock method") (HF) calculation (like, say, the one given [here](http://joshuagoings.wordpress.com/2013/04/24/hartree-fock-self-consistent-field-procedure/ "Hartree-Fock Self Consistent Field Procedure")), you are left with a matrix of coefficients. Mathematically, these coefficients are the _eigenvectors_&nbsp;that correspond to your HF Hamiltonian (Fock matrix). The eigenvalues are your orbital energies. So far so good. The real accurate (and interesting) work in electronic structure theory comes afterward, where we either refine the energies we have obtained or calculate molecular properties like UV-Vis spectra and so on. Most of these methods -- actually, _all_&nbsp;these methods -- require transforming your two electron integrals from an atomic orbital basis (your standard run-of-the-mill [basis functions](http://en.wikipedia.org/wiki/Basis_function "Basis function") are your AO basis) into a molecular orbital basis. Put another way, now that you have solved the wavefunction of the Hartree-Fock system, you need to project your two electron integrals onto that wavefunction. The way you do this looks like so:
+
+$latex (pq|rs)=\sum\_\mu\sum\_\nu\sum\_\lambda\sum\_\sigma C^{p}\_\mu C^{q}\_\nu C^{r}\_\lambda C^{s}\_\sigma(\mu\nu|\lambda\sigma)$
+
+In code, that looks something like:
+
+```python
+
+for p in range(0,dim):  
+ for q in range(0,dim):  
+ for r in range(0,dim):  
+ for s in range(0,dim):  
+ for mu in range(0,dim):  
+ for nu in range(0,dim):  
+ for lam in range(0,dim):  
+ for sig in range(0,dim):  
+ TxInt[p,q,r,s] += C[p,mu]\*C[q,nu]\*C[r,lam]\*C[s,sig]\*UnTxInt[mu,nu,lam,sig]
+
+```
+
+Holy cow. EIGHT loops of dimension number of basis functions. That should scale on the order of $latex N^8$. Few methods in electronic structure theory scale worse than that (though they do exist...here's lookin' at you [Full CI](http://en.wikipedia.org/wiki/Full_configuration_interaction "Full configuration interaction")). This means that for most calculations, if you use this method of integral transformation, this transformation will be your most expensive step. Thankfully, we can come up with a smarter way to do the above transformation. Because the coefficients are independent (i.e $latex C^{p}\_\mu$ is independent of $latex C^{q}\_\nu$), we can rewrite our first equation as
+
+$latex (pq|rs)=\sum\_\mu C^{p}\_\mu [\sum\_\nu C^{q}\_\nu [\sum\_\lambda C^{r}\_\lambda [\sum\_\sigma C^{s}\_\sigma(\mu\nu|\lambda\sigma)]]]$
+
+Or, like this, which is a lot clearer to me:
+
+$latex (\mu\nu|\lambda s)=\sum\_\sigma C^{s}\_\sigma(\mu\nu|\lambda\sigma)$
+
+$latex (\mu\nu|rs)=\sum\_\lambda C^{r}\_\lambda(\mu\nu|\lambda s)$
+
+$latex (\mu q|rs)=\sum\_\nu C^{q}\_\nu(\mu\nu|rs)$
+
+$latex (pq|rs)=\sum\_\mu C^{p}\_\mu(\mu q|rs)$
+
+Where we perform four "quarter-transformations", save each transformation, and use in the next transformation. Doing it this way gives us four steps of 5-dimension loops, so it should scale on the order of $latex N^5$. In code, that looks like:
+
+```python
+
+for p in range(0,dim):  
+ for mu in range(0,dim):  
+ temp[p,:,:,:] += C[p,mu]\*UnTXInt[mu,:,:,:]  
+ for q in range(0,dim):  
+ for nu in range(0,dim):  
+ temp2[p,q,:,:] += C[q,nu]\*temp[p,nu,:,:]  
+ for r in range(0,dim):  
+ for lam in range(0,dim):  
+ temp3[p,q,r,:] += C[r,lam]\*temp2[p,q,lam,:]  
+ for s in range(0,dim):  
+ for sig in range(0,dim):  
+ TxInt[p,q,r,s] += C[s,sig]\*temp3[p,q,r,sig]
+
+```
+
+Much nicer. You'll notice that we had to pre-allocate the 'temp' matrices, to store the results between quarter transformations. (By the way, if anyone knows how to clear these matrices from memory -- like you can in C or FORTRAN -- after you are done with the transformation, let me know...I can't find it anywhere and I am unsure that [Python](http://www.python.org/ "Python (programming language)") does a good job handling the memory anyway). The transformation also makes use of the 'slice' notation in Python/ [NumPy](http://www.numpy.org/ "NumPy"). Using this, we perform a transformation over a whole dimension, instead of one index at a time. It's a little weird to be working with full dimensions, instead of just indices, but it works well. Here is the full code, with random integer arrays built in to act as our toy four-dimensional integrals. The toy matrix of coefficients, is, like all matrices, 2D. I built in a check, so you can compare the two methods. It spits out two transformed integrals with randomly chosen indices -- if/when you run it, you should make sure that the values match. If they don't, something is wrong!
+
+```python  
+#!/usr/bin/python
+
+####################################  
+#  
+# SAMPLE INTEGRAL TRANSFORMATION CODE  
+#  
+####################################
+
+from \_\_future\_\_ import division  
+import sys  
+import math  
+import numpy as np  
+import time
+
+#####################################
+
+# Initialize Arrays  
+dim = 2 # dimension of arrays ... e.g number of basis functions  
+MO1 = np.zeros((dim,dim,dim,dim)) # For our first dumb O[N^8] method  
+MO2 = np.zeros((dim,dim,dim,dim)) # For our smarter O[N^5] method
+
+INT = np.random.randint(9,size=(dim,dim,dim,dim)) # Our toy "two electron integrals"  
+C = np.random.randint(9,size=(dim,dim)) # Toy "wavefunction coefficients"
+
+# Begin first method. It scales as N^8, as you could  
+# have guessed with there being 8 loops over dimension 'dim' (N)
+
+t0 = time.time()  
+for i in range(0,dim):  
+ for j in range(0,dim):  
+ for k in range(0,dim):  
+ for l in range(0,dim):  
+ for m in range(0,dim):  
+ for n in range(0,dim):  
+ for o in range(0,dim):  
+ for p in range(0,dim):  
+ MO1[i,j,k,l] += C[i,m]\*C[j,n]\*C[k,o]\*C[l,p]\*INT[m,n,o,p]  
+t1 = time.time()
+
+# Begin second method, scaling as N^5. We end up having four 5-loops, each  
+# over dimension 'dim' (N).
+
+t2 = time.time()  
+temp = np.zeros((dim,dim,dim,dim))  
+temp2 = np.zeros((dim,dim,dim,dim))  
+temp3= np.zeros((dim,dim,dim,dim))  
+for i in range(0,dim):  
+ for m in range(0,dim):  
+ temp[i,:,:,:] += C[i,m]\*INT[m,:,:,:]  
+ for j in range(0,dim):  
+ for n in range(0,dim):  
+ temp2[i,j,:,:] += C[j,n]\*temp[i,n,:,:]  
+ for k in range(0,dim):  
+ for o in range(0,dim):  
+ temp3[i,j,k,:] += C[k,o]\*temp2[i,j,o,:]  
+ for l in range(0,dim):  
+ for p in range(0,dim):  
+ MO2[i,j,k,l] += C[l,p]\*temp3[i,j,k,p]  
+t3 = time.time()
+
+# Set up random index to check correctness.  
+i = np.random.randint(dim)  
+j = np.random.randint(dim)  
+k = np.random.randint(dim)  
+l = np.random.randint(dim)
+
+print MO1[i,j,k,l]  
+print MO2[i,j,k,l]  
+print "TIME1: ", t1-t0  
+print "TIME2: ", t3-t2  
+```
+
+When I ran the code, moving from a dimension of 4 to a dimension of 8 (e.g I doubled the basis functions), the first method went from 0.29 seconds to&nbsp;71.5 seconds, a jump of **246**  **time**** s longer **, versus the second method, which went from 0.01 seconds to 0.29 seconds, a jump of only** 29 times**. This is almost exactly as predicted. Doubling the basis for an $latex N^8$ method gives $latex 2^8 = 256$ times longer, and doubling the basis for an $latex N^5$ algorithm gives $latex 2^5 = 32$ times longer.
+
+The new method is also very amenable to parallelization. Most electronic structure computations need to be parallelized, as model systems get larger and larger. Note that the $latex N^5$ method is performed in four independent steps. Because of this independence, we can make our code run in parallel, and perform the quarter transformations on separate processors.
+
+A great example why choosing your algorithm matters in quantum chemistry!
+
