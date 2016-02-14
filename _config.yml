@@ -17,6 +17,7 @@ markdown:            kramdown
 # Add pages here to add to header
 pages_list:       
   CV: '/assets/CV.pdf'
+  Publications: '/publications'
 #  About: '/about'
 #  Archive: '/archive'
 
