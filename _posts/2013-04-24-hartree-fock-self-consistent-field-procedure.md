@@ -5,7 +5,7 @@ title: Hartree-Fock Self Consistent Field Procedure
 
 I do quite a bit of development work as a graduate student, and one of the most helpful parts of my education was writing a [Hartree-Fock](http://en.wikipedia.org/wiki/Hartree%E2%80%93Fock_method "Hartree–Fock method") SCF (self-consistent field) program from scratch. The SCF procedure is the workhorse of most [computational chemistry](http://en.wikipedia.org/wiki/Computational_chemistry "Computational chemistry") software packages, as it is generally the first step before doing more advanced calculations (such as MP2, etc). It is also the conceptual basis for [molecular orbital theory](http://en.wikipedia.org/wiki/Molecular_orbital_theory "Molecular orbital theory"). I've shared my code below, in case you want to try it out for yourself. I wrote it in [Python](http://www.python.org/ "Python (programming language)") 2.7 (it won't work in Python 3), utilizing the [NumPy](http://www.numpy.org/ "NumPy") package. I find it to be very readable, which makes testing out ideas fast and (relatively) intuitive. The program is written to give an idea how SCF calculations work, so it isn't that efficient -- but I only use it for two electron systems anyway so who cares!
 
-```python
+~~~python
 
 #!/usr/bin/python
 
@@ -198,7 +198,7 @@ while DELTA > convergence:
     print "TOTAL E(SCF) = \n", EN + ENUC  
    #print "C = \n", C
 
-```
+~~~
 
 To use it, download the `scf.py` file to your computer, and put it in a folder along with `s.dat`, `t.dat`, `v.dat`, and `enuc.dat`. These are the integral values it needs to run: `s.dat` is the [overlap matrix](http://en.wikipedia.org/wiki/Orbital_overlap "Orbital overlap") values, `t.dat` is the kinetic energy matrix, `v.dat` is the [potential energy](http://en.wikipedia.org/wiki/Potential_energy "Potential energy") matrix, and `enuc.dat` contains the nuclear repulsion energy. You'll also need the `eri.dat`, which contains the two electron integrals. All values were taken from `Gaussian09` for [HeH+](http://en.wikipedia.org/wiki/Helium_hydride_ion "Helium hydride ion") at a bond length of 0.9295 Angstrom with an [STO-3G](http://en.wikipedia.org/wiki/STO-nG_basis_sets "STO-nG basis sets") basis set. Once you have those downloaded, fire up your terminal and give it a try! See the example of my terminal below for usage. Just navigate to the folder you have everything in, and type `python scf.py` then hit Enter!
 

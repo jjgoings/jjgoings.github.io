@@ -11,9 +11,9 @@ Anyway, if you want to try it yourself, [here is a link to the code that ranks b
 
 To run it, type
 
-```
+~~~
 python ranking.py -e -y 2013
-```
+~~~
 
 This will call all the other `python` files to fetch the data from `http://www.masseyratings.com` and will then process it an implement the Colley method, giving you a `colley.txt` file containing the ratings of each team (sorted of course). The flag `-y` gives input for the year (2012 or 2013), and the `-e` flag, if present, includes [exhibition matches](http://en.wikipedia.org/wiki/Exhibition_game "Exhibition game") as well (e.g. preseason games).
 
@@ -21,7 +21,7 @@ Now for the guts of the code (for those who are interested).
 
 First we need a way to get the data from masseyratings.com, and put the games into an array as well as get our teams. Because the games use an integer to represent the teams, I create a `python` dictionary to map the number to the team name. So `getdata.py` does precisely this:
 
-```python  
+~~~python  
 def get_teams():  
      """ Get team data from masseyratings.com,  
        parse it into a dictionary with team number  
@@ -67,11 +67,11 @@ def get_games(year,exhibition):
     my_games = genfromtxt(file_name, dtype = None, delimiter=',')
 
     return my_games  
-```
+~~~
 
 Once we have our games and teams, we need to set up the Colley matrix ('A'), and solve it against Colley's 'b' vector. The `colley.py` takes care of this. We take data about the games, and set up a square matrix with the number of teams as the dimension. Where teams intersect contains data about how they fared against each other. The mathematical details can be found in the Who's #1 and in the link to the Colley Method I gave. The end result of this code is a rating vector (called `rating` here). Anyway, here is that code:
 
-```python  
+~~~python  
 def colley(num_teams,num_games,my_teams,my_games):
 
     A = np.zeros((num_teams,num_teams))  
@@ -98,13 +98,13 @@ def colley(num_teams,num_games,my_teams,my_games):
     
     rating = np.linalg.solve(A,b)  
     return rating  
-```
+~~~
 
 Once we have these, we pair it up with our dictionary element containing the team names, and sort it. This is the `finalsort.py` code. I wrapped everything in the file `ranking.py` if you are checking this out in my repo. It takes care of making all the files play nicely together.
 
 So now the big question is, how does it fare? Here is the list as of today (9/7/13):
 
-```
+~~~
     Seattle, 0.806187648116
     Detroit, 0.76229943304
     Washington, 0.734350377447
@@ -137,7 +137,7 @@ So now the big question is, how does it fare? Here is the list as of today (9/7/
     Jacksonville, 0.280125144891
     Pittsburgh, 0.192367833585
     Atlanta, 0.0805628953732
-```
+~~~
 
 Not surprisingly, Seattle is at the top (Woot woot! Go Hawks!), having finished the preseason perfectly against tough teams. Atlanta is at the bottom, having lost every preseason game. Generally, the ratings stack up similar to how the teams did in the preseason.
 

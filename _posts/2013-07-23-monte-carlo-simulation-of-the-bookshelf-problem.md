@@ -13,7 +13,7 @@ In the bookshelf problem, we can program our computer to take the 12 books, arra
 
 First, import the `random` and `itertools` modules, to help us generate random numbers and iterate among the lists. Then define two functions: one to check if two lists (or parts of lists) have all the same elements, and one to generate random numbers from 1 to 12 inclusive.
 
-```python
+~~~python
 
 #!/bin/python
 
@@ -30,13 +30,13 @@ def checkEqual(lst):
 def rnum():  
     return random.randint(0,12)  
 
-```
+~~~
 
 Then we build our bookshelf. You can see that --- pre-earthquake --- the books formed a so-called 'natural set'. We initialize the total number of times we arrange our shelf, as well as the number of ordered arrangements, to zero. We haven't done anything yet!
 
 Then we begin the main loop. Each iteration of the loop does two big things: first, it randomly arranges the bookshelf, and two, it checks to see if it forms a natural set. The checking is where you see all the "if/elif/else" sections of code. Since there are only 6 ways we can form a natural set (3! ways to arrange 3 types of books), I just go ahead and check each case explicitly.
 
-```python  
+~~~python  
 
 #!/bin/python
 
@@ -98,7 +98,7 @@ print 'TOTAL = ',TOTAL
 print 'PERCENT = ',(ORDERED/TOTAL)*100,'%'
 print 'TIME = ',round(t1-t0,5),'seconds'
 
-```
+~~~
 
 And we're done! Running the code for a suitable number of iterations gives the probability that the books are ordered. More simulations gives a more accurate answer. We'd get the perfect answer if we ran this for an infinite amount of times. Running it 1 million times gave me a probability of 0.0228%. Of course, since they were random trials, this number may change a bit, and if you run the code, you may get a different number --- though hopefully not too different!
 

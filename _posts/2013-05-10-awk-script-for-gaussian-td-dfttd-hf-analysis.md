@@ -9,13 +9,13 @@ When I am generating [UV-Vis](http://en.wikipedia.org/wiki/Ultraviolet%E2%80%93v
 
 [TD-DFT](http://en.wikipedia.org/wiki/Time-dependent_density_functional_theory "Time-dependent density functional theory") actually shows tons of transitions from ~2 to 4.5 [eV](http://en.wikipedia.org/wiki/Electronvolt "Electronvolt")...they just don't matter! So for my own sanity in pouring through the data, I wrote this [Awk](http://cm.bell-labs.com/cm/cs/awkbook "AWK") script (well, Awk in a Bash script) to pull out the transitions I want, based on oscillator strength (intensity). If you don't know Awk, you really should. It has nasty syntax (like [Perl](http://www.perl.org "Perl")...), but once you get used to it, it makes text editing and parsing SO SO EASY. I love it. I use Awk all the time for my work. Take a look, and feel free to grab a copy for yourself. To run the script, just type (minus the quotes, and assuming you saved it as 'tdanalysis'): 
 
-```
+~~~
 ./tdanalysis [FILE] [minimum oscillator strength]
-```
+~~~
 
 Enjoy!
 
-```bash
+~~~bash
 
 #!/bin/bash
 
@@ -39,7 +39,7 @@ gawk -v mult=$MULT 'BEGIN {format = "%-6s %-10s %10s %10s %6s\n"
  /->/ {printf format, "", $1$2$3,$4," ","("mult*100*($4)^2"%)"}  
  END { print "\nEnd of Analysis\n\n"}' $FILE | gawk -v oscil=$OSCIL 'RS="\n\n" {if($6 > oscil) {print $0"\n"}}'
 
-```
+~~~
 
 You may need to change `gawk` to `awk`, depending on your system. I've never had problems with `gawk` though.
 
