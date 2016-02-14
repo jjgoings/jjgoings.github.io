@@ -13,6 +13,8 @@ gems:                [jekyll-paginate]
 paginate:            5
 paginate_path:       "page:num"
 markdown:            kramdown 
+kramdown:
+  math_engine: mathjax
 
 # Add pages here to add to header
 pages_list:       
