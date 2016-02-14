@@ -5,9 +5,9 @@ permalink:           pretty
 
 # Setup
 title:               Joshua Goings 
-tagline:             ''
-description:         ''
-#url:                 http://lanyon.getpoole.com
+#tagline:             ''
+#description:         ''
+url:                 http://joshuagoings.com
 baseurl:             ''
 gems:                [jekyll-paginate]
 paginate:            5
@@ -16,8 +16,9 @@ markdown:            kramdown
 
 # Add pages here to add to header
 pages_list:       
+  CV: '/assets/CV.pdf'
 #  About: '/about'
-  Archive: '/archive'
+#  Archive: '/archive'
 
 # About/contact
 #author:
