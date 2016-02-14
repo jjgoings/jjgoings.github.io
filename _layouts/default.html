@@ -2,6 +2,41 @@
 <html lang="en-us">
 
   {% include head.html %}
+  <!--MathJax-->
+  <script type="text/x-mathjax-config"> 
+      MathJax.Hub.Config({ 
+      jax: ["input/TeX","output/HTML-CSS"], 
+      extensions: ["tex2jax.js"], 
+      tex2jax: { 
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ], 
+      displayMath: [ ['$$','$$'], ["\\[","\\]"] ], 
+      processEscapes: true 
+      }, 
+      }); 
+    </script> 
+
+    <!-- config from
+         http://cwoebker.com/posts/latex-math-magic
+      -->
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+      tex2jax: {
+      skipTags: ['script', 'noscript', 'style', 'textarea', 'pre']
+      }
+      });
+
+      MathJax.Hub.Queue(function() {
+      var all = MathJax.Hub.getAllJax(), i;
+      for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';
+      }
+      });
+    </script>
+
+    <!-- the following loads MathJax; place at bottom to improve overall
+         page load speed but delay LaTeX rendering -->
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js"></script>
+
   {% include google_analytics.html %}
 
   <body>
