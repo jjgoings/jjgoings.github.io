@@ -14,6 +14,11 @@ paginate:            5
 paginate_path:       "page:num"
 markdown:            redcarpet
 
+# Add pages here to add to header
+pages_list:       
+#  About: '/about'
+  Archive: '/archive'
+
 # About/contact
 #author:
 #  name:              Mark Otto
