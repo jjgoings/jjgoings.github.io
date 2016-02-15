@@ -23,7 +23,7 @@ Here you can find links to talks that I have given in the past, both formal and 
 
 **Theory Group Meeting** \\
 *Seattle, WA* (2014)\\
-["Generalized Hartree Fock: Symmetry Breaking and Magnetic Ordering"](/assets/GHF.pdf)
+["Generalized Hartree Fock: Symmetry Breaking and Magnetic Ordering"](/assets/ghf_magnetic.pdf)
 
 **248th ACS National Meeting** \\
 *San Francisco, CA* (2014)\\
