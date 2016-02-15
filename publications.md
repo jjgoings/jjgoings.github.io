@@ -1,6 +1,6 @@
 ---
 layout: page
-Title: Publications
+title: Publications
 ---
 
 **(10)** L. Nienhaus$$^*$$, **J. J. Goings**$$^*$$, D. Nguyen, S. Wieghold, J. Lyding, X. Li, M. Gruebele, ''[Imaging Excited Orbitals of Quantum Dots: Experiment and Electronic Structure Theory](http://dx.doi.org/10.1021/jacs.5b09272),'' 2015, *J. Amer. Chem. Soc.* 2015, 137 (46), 14743--14750. $$^*$$Authors contributed equally to work
