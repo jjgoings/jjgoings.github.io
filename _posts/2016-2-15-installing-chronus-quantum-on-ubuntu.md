@@ -87,7 +87,7 @@ Same idea as above, but for the required linear algebra libraries.
 Let's knock it out in one shot. Type
 
 ~~~
-$ sudo apt-get install libeigen3-dev libblas-dev liblapacke-dev       libhdf5-dev
+$ sudo apt-get install libeigen3-dev libblas-dev liblapacke-dev libhdf5-dev
 ~~~
 
 Okay, we are done here.
