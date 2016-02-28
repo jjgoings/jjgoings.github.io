@@ -48,7 +48,7 @@ You can also `scp` directly from your development machine now, too.
 
 ~~~
 home:>$ scp devel:~/path/to/files
-files                                        100% 4084     4.0KB/s   00:00 
+files                           100% 4084     4.0KB/s   00:00 
 home:>$
 ~~~
 
