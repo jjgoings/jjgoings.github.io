@@ -5,6 +5,10 @@ title: Presentations
 
 Here you can find links to talks that I have given in the past, both formal and informal, starting from the most recent.
 
+**251st ACS National Meeting** \\
+*San Diego, CA* (2016) \\
+["Atomic-orbital based real-time TDDFT for circular dichroism spectroscopy"](/assets/RT-ECD.pdf)
+
 **PacfiChem 2015** \\
 *Honolulu, HI* (2015) \\
 ["Theoretical investigation of magnetic exchange interactions in dilute magnetic semiconductor quantum dots induced by defects"](/assets/MnAZO.pdf)
