@@ -9,7 +9,7 @@ I recently made a video of a resonant electronic excitation of hydrogen peroxide
 
 You can check out the video by clicking the picture below.
 
-[![Quantum Dynamics]({{ site.baseurl }}/assets/h2o2resonant.png)](https://youtu.be/84Ct5q7uvR4)
+[![Quantum Dynamics]({{ site.baseurl }}/assets/h2o2resonant.png)](https://youtu.be/yTIVQI_WgAk)
 
 The video was made using the real-time TDHF module in [Chronus Quantum](https://github.com/liresearchgroup/chronusq_public). We visualize how the electronic density changes over time.
 
