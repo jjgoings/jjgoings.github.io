@@ -5,6 +5,10 @@ title: Presentations
 
 Here you can find links to talks that I have given in the past, both formal and informal, starting from the most recent.
 
+**Guest Lectrue for SPU's Intro to Research Methods Course** \\
+*Seattle, WA* (2016) \\
+["Molecules and Light (or, Why you see what you see)"](/assets/SPU-2016.pdf)
+
 **251st ACS National Meeting** \\
 *San Diego, CA* (2016) \\
 ["Atomic-orbital based real-time TDDFT for circular dichroism spectroscopy"](/assets/RT-ECD.pdf)
