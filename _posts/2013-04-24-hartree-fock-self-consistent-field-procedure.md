@@ -7,15 +7,15 @@ title: Hartree-Fock Self Consistent Field Procedure
 
 SCF program: [`scf.py`]({{ site.baseurl }}/assets/scf/scf.py)
 
-Overlap Matrix: [`s.dat`]({{ site.baseurl}}/assets/scf/s.dat),
+Overlap integrals: [`s.dat`]({{ site.baseurl}}/assets/scf/s.dat),
 
-Kinetic Energy Matrix:[`t.dat`]({{ site.baseurl }}/assets/scf/t.dat),
+Kinetic Energy integrals:[`t.dat`]({{ site.baseurl }}/assets/scf/t.dat),
 
-Potential Energy Matrix: [`v.dat`]({{ site.baseurl }}/assets/scf/v.dat),
+Potential Energy integrals: [`v.dat`]({{ site.baseurl }}/assets/scf/v.dat),
 
 Nuclear Repulsion: [`enuc.dat`]({{ site.baseurl }}/assets/scf/enuc.dat),
 
-Elecron Repulsion Integrals: [`eri.dat`]({{ site.baseurl }}/assets/scf/eri/dat)
+Elecron Repulsion integrals: [`eri.dat`]({{ site.baseurl }}/assets/scf/eri/dat)
 
 
 ---
