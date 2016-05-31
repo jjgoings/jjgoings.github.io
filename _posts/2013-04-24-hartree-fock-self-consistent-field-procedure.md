@@ -15,7 +15,7 @@ Potential Energy integrals: [`v.dat`]({{ site.baseurl }}/assets/scf/v.dat),
 
 Nuclear Repulsion: [`enuc.dat`]({{ site.baseurl }}/assets/scf/enuc.dat),
 
-Elecron Repulsion integrals: [`eri.dat`]({{ site.baseurl }}/assets/scf/eri/dat)
+Electron Repulsion integrals: [`eri.dat`]({{ site.baseurl }}/assets/scf/eri.dat)
 
 
 ---
@@ -227,7 +227,7 @@ matrix](http://en.wikipedia.org/wiki/Orbital_overlap "Orbital overlap") values,
 `t.dat` is the kinetic energy matrix, `v.dat` is the [potential
 energy](http://en.wikipedia.org/wiki/Potential_energy "Potential energy")
 matrix, and `enuc.dat` contains the nuclear repulsion energy. You'll also need
-the [`eri.dat`]({{ site.baseurl }}/assets/scf/eri/dat), which contains the two electron integrals. All values were taken from `Gaussian09` for [HeH+](http://en.wikipedia.org/wiki/Helium_hydride_ion "Helium hydride ion") at a bond length of 0.9295 Angstrom with an [STO-3G](http://en.wikipedia.org/wiki/STO-nG_basis_sets "STO-nG basis sets") basis set. Once you have those downloaded, fire up your terminal and give it a try! See the example of my terminal below for usage. Just navigate to the folder you have everything in, and type `python scf.py` then hit Enter!
+the [`eri.dat`]({{ site.baseurl }}/assets/scf/eri.dat), which contains the two electron integrals. All values were taken from `Gaussian09` for [HeH+](http://en.wikipedia.org/wiki/Helium_hydride_ion "Helium hydride ion") at a bond length of 0.9295 Angstrom with an [STO-3G](http://en.wikipedia.org/wiki/STO-nG_basis_sets "STO-nG basis sets") basis set. Once you have those downloaded, fire up your terminal and give it a try! See the example of my terminal below for usage. Just navigate to the folder you have everything in, and type `python scf.py` then hit Enter!
 
 ![Image]({{ site.baseurl }}/assets/screen-shot-2013-04-24-at-11-49-57-am.png)
 
