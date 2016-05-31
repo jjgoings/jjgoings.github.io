@@ -200,9 +200,9 @@ while DELTA > convergence:
 
 ~~~
 
-To use it, download the [`scf.py`](../assets/scf.py) file to your computer, and put it in a folder along with `s.dat`, `t.dat`, `v.dat`, and `enuc.dat`. These are the integral values it needs to run: `s.dat` is the [overlap matrix](http://en.wikipedia.org/wiki/Orbital_overlap "Orbital overlap") values, `t.dat` is the kinetic energy matrix, `v.dat` is the [potential energy](http://en.wikipedia.org/wiki/Potential_energy "Potential energy") matrix, and `enuc.dat` contains the nuclear repulsion energy. You'll also need the `eri.dat`, which contains the two electron integrals. All values were taken from `Gaussian09` for [HeH+](http://en.wikipedia.org/wiki/Helium_hydride_ion "Helium hydride ion") at a bond length of 0.9295 Angstrom with an [STO-3G](http://en.wikipedia.org/wiki/STO-nG_basis_sets "STO-nG basis sets") basis set. Once you have those downloaded, fire up your terminal and give it a try! See the example of my terminal below for usage. Just navigate to the folder you have everything in, and type `python scf.py` then hit Enter!
+To use it, download the [`scf.py`]({{ site.baseurl }}/assets/scf.py) file to your computer, and put it in a folder along with `s.dat`, `t.dat`, `v.dat`, and `enuc.dat`. These are the integral values it needs to run: `s.dat` is the [overlap matrix](http://en.wikipedia.org/wiki/Orbital_overlap "Orbital overlap") values, `t.dat` is the kinetic energy matrix, `v.dat` is the [potential energy](http://en.wikipedia.org/wiki/Potential_energy "Potential energy") matrix, and `enuc.dat` contains the nuclear repulsion energy. You'll also need the `eri.dat`, which contains the two electron integrals. All values were taken from `Gaussian09` for [HeH+](http://en.wikipedia.org/wiki/Helium_hydride_ion "Helium hydride ion") at a bond length of 0.9295 Angstrom with an [STO-3G](http://en.wikipedia.org/wiki/STO-nG_basis_sets "STO-nG basis sets") basis set. Once you have those downloaded, fire up your terminal and give it a try! See the example of my terminal below for usage. Just navigate to the folder you have everything in, and type `python scf.py` then hit Enter!
 
-Link to the Files: [SCF Program](../assets/scf/ "SCF Program")
+Link to the Files: [SCF Program]({{ site.baseurl}}/assets/scf/)
 
 
 ![Image]({{ site.baseurl }}/assets/screen-shot-2013-04-24-at-11-49-57-am.png)
