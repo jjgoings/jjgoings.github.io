@@ -4,7 +4,8 @@ title: Publications
 ---
 **(11)** **J. J. Goings**, X. Li, ''[An Atomic Orbital Based Real-Time
 Time-Dependent Density Functional Theory for Computing Electronic Circular
-Dichroism Band Spectra](),'' 2016, *J. Chem. Phys.* 2016, *Just Accepted*. 
+Dichroism Band Spectra](http://dx.doi.org/10.1063/1.4953668),'' 2016, *J. Chem.
+Phys.* 2016, 144 (23), 234102. 
 
 <p align="center">
   <img src="/assets/pub11toc.gif" height="200"/>
