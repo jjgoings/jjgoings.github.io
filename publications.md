@@ -2,16 +2,22 @@
 layout: page
 title: Publications
 ---
+**(12)** F. Egidi, **J. J. Goings**, M. J. Frisch, X. Li, ''[A Direct Atomic-Orbital Based Relativistic Two-Component Linear Response Method for Calculating Excited State Fine Structures](http://dx.doi.org/10.1021/acs.jctc.6b00474),'' *J. Chem. Theory Comput.* 2016, *Just Accepted* 
+
+<p align="center">
+  <img src="/assets/pub12toc.gif" height="200"/>
+</p>
+
 **(11)** **J. J. Goings**, X. Li, ''[An Atomic Orbital Based Real-Time
 Time-Dependent Density Functional Theory for Computing Electronic Circular
-Dichroism Band Spectra](http://dx.doi.org/10.1063/1.4953668),'' 2016, *J. Chem.
+Dichroism Band Spectra](http://dx.doi.org/10.1063/1.4953668),'' *J. Chem.
 Phys.* 2016, 144 (23), 234102. 
 
 <p align="center">
   <img src="/assets/pub11toc.gif" height="200"/>
 </p>
 
-**(10)** L. Nienhaus$$^*$$, **J. J. Goings**$$^*$$, D. Nguyen, S. Wieghold, J. Lyding, X. Li, M. Gruebele, ''[Imaging Excited Orbitals of Quantum Dots: Experiment and Electronic Structure Theory](http://dx.doi.org/10.1021/jacs.5b09272),'' 2015, *J. Amer. Chem. Soc.* 2015, 137 (46), 14743--14750. $$^*$$Authors contributed equally to work
+**(10)** L. Nienhaus$$^*$$, **J. J. Goings**$$^*$$, D. Nguyen, S. Wieghold, J. Lyding, X. Li, M. Gruebele, ''[Imaging Excited Orbitals of Quantum Dots: Experiment and Electronic Structure Theory](http://dx.doi.org/10.1021/jacs.5b09272),'' *J. Amer. Chem. Soc.* 2015, 137 (46), 14743--14750. $$^*$$Authors contributed equally to work
 
 <p align="center">
   <img src="/assets/pub10toc.gif" height="200"/>
