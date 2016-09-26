@@ -2,7 +2,15 @@
 layout: page
 title: Publications
 ---
-**(12)** F. Egidi, **J. J. Goings**, M. J. Frisch, X. Li, ''[A Direct Atomic-Orbital Based Relativistic Two-Component Linear Response Method for Calculating Excited State Fine Structures](http://dx.doi.org/10.1021/acs.jctc.6b00474),'' *J. Chem. Theory Comput.* 2016, *Just Accepted* 
+**(14)** A. Petrone, **J. J. Goings**, X. Li, ''[Quantum confinement effects on optical transitions in nanodiamonds containing nitrogen vacancies](https://journals.aps.org/prb/accepted/e6070O0aH7b1433f735a45846a5e1f50c57eab084),'' *Phys. Rev. B*, *Accepted 19 September 2016*.
+
+**(13)** **J. J. Goings**, J. M. Kasper, F. Egidi, S. Sun, X. Li, ''[Real time propagation of the exact two component time-dependent density functional theory](http://dx.doi.org/10.1063/1.4962422),'' *J. Chem. Phys.* 2016, 145 (10), 104107.
+
+**(12)** F. Egidi, **J. J. Goings**, M. J. Frisch, X. Li, ''[A Direct
+Atomic-Orbital Based Relativistic Two-Component Linear Response Method for
+Calculating Excited State Fine
+Structures](http://dx.doi.org/10.1021/acs.jctc.6b00474),'' *J. Chem. Theory
+Comput.* 2016, 12 (8), 3711--3718. 
 
 <p align="center">
   <img src="/assets/pub12toc.gif" height="200"/>
@@ -17,7 +25,8 @@ Phys.* 2016, 144 (23), 234102.
   <img src="/assets/pub11toc.gif" height="200"/>
 </p>
 
-**(10)** L. Nienhaus$$^*$$, **J. J. Goings**$$^*$$, D. Nguyen, S. Wieghold, J. Lyding, X. Li, M. Gruebele, ''[Imaging Excited Orbitals of Quantum Dots: Experiment and Electronic Structure Theory](http://dx.doi.org/10.1021/jacs.5b09272),'' *J. Amer. Chem. Soc.* 2015, 137 (46), 14743--14750. $$^*$$Authors contributed equally to work
+**(10)** L. Nienhaus$$^*$$, **J. J. Goings**$$^*$$, D. Nguyen, S. Wieghold, J. Lyding, X. Li, M. Gruebele, ''[Imaging Excited Orbitals of Quantum Dots: Experiment and Electronic Structure Theory](http://dx.doi.org/10.1021/jacs.5b09272),'' *J. Amer. Chem. Soc.* 2015, 137 (46), 14743--14750. 
+$$^*$$Authors contributed equally to work
 
 <p align="center">
   <img src="/assets/pub10toc.gif" height="200"/>
