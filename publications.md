@@ -2,7 +2,16 @@
 layout: page
 title: Publications
 ---
-**(14)** A. Petrone, **J. J. Goings**, X. Li, ''[Quantum confinement effects on optical transitions in nanodiamonds containing nitrogen vacancies](https://journals.aps.org/prb/accepted/e6070O0aH7b1433f735a45846a5e1f50c57eab084),'' *Phys. Rev. B*, *Accepted 19 September 2016*.
+**(15)** D. Williams-Young, **J. J. Goings**, X. Li, ''[Accelerating Real-Time
+Time-Dependent Density Functional Theory with a Non-Recursive Chebyshev
+Expansion of the Quantum
+Propagator](http://dx.doi.org/10.1021/acs.jctc.6b00693),'' *J. Chem. Theory
+Comput.*, *Accepted 17 October 2016*.
+
+**(14)** A. Petrone, **J. J. Goings**, X. Li, ''[Quantum confinement effects on
+optical transitions in nanodiamonds containing nitrogen
+vacancies](https://doi.org/10.1103/PhysRevB.94.165402),''
+*Phys. Rev. B* 2016, 94 (16), 165402.
 
 **(13)** **J. J. Goings**, J. M. Kasper, F. Egidi, S. Sun, X. Li, ''[Real time propagation of the exact two component time-dependent density functional theory](http://dx.doi.org/10.1063/1.4962422),'' *J. Chem. Phys.* 2016, 145 (10), 104107.
 
