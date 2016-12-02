@@ -2,11 +2,18 @@
 layout: page
 title: Publications
 ---
+**(16)** **J. J. Goings**, D. B. Lingerfelt, X. Li, ''[Can Quantized Vibrational Effects Be Obtained from Ehrenfest Mixed Quantum-Classical Dynamics?](http://dx.doi.org/10.1021/acs.jpclett.6b02424),'' *J. Phys. Chem. Lett.*, 2016, 7, 5193--5197.
+
+<p align="center">
+  <img src="/assets/pub16toc.gif" height="200"/>
+</p>
+
+
 **(15)** D. Williams-Young, **J. J. Goings**, X. Li, ''[Accelerating Real-Time
 Time-Dependent Density Functional Theory with a Non-Recursive Chebyshev
 Expansion of the Quantum
 Propagator](http://dx.doi.org/10.1021/acs.jctc.6b00693),'' *J. Chem. Theory
-Comput.*, *Accepted 17 October 2016*.
+Comput.*, 2016, 12 (11), 5333-5338.
 
 **(14)** A. Petrone, **J. J. Goings**, X. Li, ''[Quantum confinement effects on
 optical transitions in nanodiamonds containing nitrogen
