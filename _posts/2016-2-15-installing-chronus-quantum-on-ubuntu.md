@@ -33,27 +33,27 @@ For starters, open up your terminal. Move to a directory where you want to insta
 
 Since the source is hosted on GitHub, we will use `git` to obtain our copy of the code. Type
 
-~~~
+{% highlight text %}
 $ git clone https://github.com/liresearchgroup/chronusq_public.git
-~~~ 
+{% endhighlight %} 
 
 If you don't have `git`, you can install it by typing
 
-~~~
+{% highlight text %}
 $ sudo apt-get update && sudo apt-get install git-all
-~~~
+{% endhighlight %}
 
 In fact, if Ubuntu ever complains about not having some package, 95% of the time you can just
 
-~~~
+{% highlight text %}
 $ sudo apt-get install <whatever-package-ubuntu-is-whining-about>
-~~~
+{% endhighlight %}
 
 Okay, you should now have `chronusq_public` in your directory. `cd` into it.
 
-~~~
+{% highlight text %}
 $ cd chronusq_public
-~~~
+{% endhighlight %}
 
 Take care of a few dependencies...
 -------
@@ -68,15 +68,15 @@ Let's take care of `python` first, following the `apt-get` commands we've seen b
 
 Although `chronus` is mostly C++, the high level execution is handled by a `python` script. So let's get that set up. Type
 
-~~~
+{% highlight text %}
 $ sudo apt-get install python-dev libxml2-dev libxstl1-dev python-pip
-~~~
+{% endhighlight %}
 
 Followed by 
 
-~~~
+{% highlight text %}
 $ sudo pip install configparser
-~~~
+{% endhighlight %}
 
 This takes care of the `python` dependencies.
 
@@ -86,9 +86,9 @@ Same idea as above, but for the required linear algebra libraries.
 
 Let's knock it out in one shot. Type
 
-~~~
+{% highlight text %}
 $ sudo apt-get install libeigen3-dev libblas-dev liblapacke-dev libhdf5-dev
-~~~
+{% endhighlight %}
 
 Okay, we are done here.
 
@@ -97,21 +97,21 @@ Configure
 
 Now, you should still be in the top of the `chronusq_public` directory. If not, 
 
-~~~
+{% highlight text %}
 $ cd /path/to/chronusq_public
-~~~
+{% endhighlight %}
 
 From this directory, make a `build` directory and `cd` into it.
 
-~~~
+{% highlight text %}
 $ mkdir build && cd build
-~~~
+{% endhighlight %}
 
 Now, inside the `build/` directory, type
 
-~~~
+{% highlight text %}
 $ cmake -DCMAKE_CXX_FLAGS='-w -O2 -std=c++11' -DBUILD_LIBINT=ON ..
-~~~
+{% endhighlight %}
 
 This will configure your compilation. 
 
@@ -128,21 +128,21 @@ Compile
 
 Perfect. Now just type
 
-~~~
+{% highlight text %}
 $ make -j <nproc>
-~~~
+{% endhighlight %}
 
 where `<nproc>` is the number of processors. I recommend you use all CPUs available. You can check via
 
-~~~
+{% highlight text %}
 $ nproc --all
-~~~
+{% endhighlight %}
 
 I had four, so 
 
-~~~
+{% highlight text %}
 $ make -j 4
-~~~
+{% endhighlight %}
 
 Now `chronus` will take care of the rest! It will clean up several more dependencies, so a lot more junk will dump to your terminal, but that's expected. You can pretty much ignore the `boost` "warnings" it dumps out.
 
@@ -155,13 +155,13 @@ In your `build` directory, there should now be a `chronus` python script, called
 
 You can run it on a test file like so
 
-~~~
+{% highlight text %}
 $ python chronusq.py <input-file>
-~~~
+{% endhighlight %}
 
 Here's a test case from the documentation, which will do a Hartree-Fock SCF calculation on a water molecule:
 
-~~~
+{% highlight text %}
 #
 # Molecule Specification
 #
@@ -189,19 +189,19 @@ basis = sto3g.gbs
 
 [Misc]
 nsmp = 1 
-~~~
+{% endhighlight %}
 
 Save this file to a file named `water.inp`. Then you can run `chronus` by
 
-~~~
+{% highlight text %}
 $ python chronusq.py water.inp
-~~~
+{% endhighlight %}
 
 The output will be named `water.out`.
 
 Open this file up, and scroll down until you see 
 
-~~~
+{% highlight text %}
 ...
 
 ------------------------------------------------------------------
@@ -225,7 +225,7 @@ SCF Iteration   Energy (Eh)       ΔE (Eh)          |ΔP(α)|
 SCF Completed: E(ℝ-RHF) = -74.9420798968  Eh after  14  SCF Iterations
 
 ...
-~~~
+{% endhighlight %}
 
 And there you have it! The results of the Hartree-Fock SCF iteration. 
 

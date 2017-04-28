@@ -9,11 +9,11 @@ This means I can't log in directly when I work from home. I have to log into a n
 
 It gets kind of tedious to keep doing something along the lines of 
 
-~~~
+{% highlight text %}
 home:>$ ssh network-host
 network-host:>$ ssh development-machine
 development-machine:>$
-~~~
+{% endhighlight %}
 It also makes it a pain to copy files from home to the remote machine (and vice versa!).
 
 However, you can easily set up a transparent tunnel through your network-host that lets you (effectively) log on to your development machine as if it weren't even firewalled.
@@ -23,7 +23,7 @@ Just open up (or create) `~/.ssh/config`:
 Add the following lines (replacing `network-host` and `development-machine` with the names of your computers). You can name them whatever you want. Here I named each machine `network` and `devel`.
 
 
-~~~bash
+{% highlight bash %}
 # Non-firewalled computer
 Host network 
 HostName network-machine
@@ -33,23 +33,23 @@ Host devel
 HostName development-machine 
 ProxyCommand ssh -o 'ForwardAgent yes' network 'ssh-add && nc %h %p'
 
-~~~
+{% endhighlight %}
 
 What this does is log you into the non-firewalled network-host, then establish a connection to the firewalled computer through `netcat` (`nc` in this case). You never actually see the network host, it acts on your behalf, invisibly in the background.
 
 So, from your home computer, you can login directly to the development machine:
 
-~~~
+{% highlight text %}
 home:>$ ssh devel 
 development-machine:>$
-~~~
+{% endhighlight %}
 
 You can also `scp` directly from your development machine now, too.
 
-~~~
+{% highlight text %}
 home:>$ scp devel:~/path/to/files .
 files                           100% 4084     4.0KB/s   00:00 
 home:>$
-~~~
+{% endhighlight %}
 
 

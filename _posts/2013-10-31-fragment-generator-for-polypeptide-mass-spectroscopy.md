@@ -13,7 +13,7 @@ I realized it wouldn't be too bad to write a program, and so I am sharing the sc
 
 So for this problem, we need to have a set of amino acids, and their masses. So I just looked up the information and hard-coded it into the program. This is the set we will be drawing our combinations from, and it looks like this:
 
-~~~python
+{% highlight python %}
 
 # Build list of amino acids  
 amino_acids = ['ALA','ARG','ASP','ASN','CYS','GLU','GLN','GLY','HIS','ILE', \  
@@ -23,35 +23,35 @@ amino_acid_MW = [71.09,156.19,114.11,115.09,103.15,129.12,128.14,57.05,137.14,11
 # Combine them into one list, AA  
 AA = zip(amino_acids,amino_acid_MW)
 
-~~~
+{% endhighlight %}
 
 We zip them together to pair up the name of the residue (or amino acid) and its mass.
 
 Once we have this, we will start building our combinations. First we take all combinations of 1 amino acid, then 2 amino acids, then 3 and so on. We don't need to explicitly make and check each combination if we know will be below the mass specified, or if the chain will always be too high for our desired target mass. For example, say we want all combinations of residues that have a mass between 500.3 and 500.5. In this case, no chain of 2 amino acids alone can reach this, because the largest residue we are working with has a mass of 186.12! Similarly, if the lightest chain possible is too big (e.g. a chain of glycines), we better stop right there because there is no way we will find any more combinations of residues. So we have a check for if the mass is too small (increment chain length by one and continue) or if the mass is too big (break and exit). These bounds keep our computation relatively sane! Here it is in action:
 
-~~~python
+{% highlight python %}
 
 for count in range(1,max_chain_length+1):  
     if count*57.05 > upper_bound_mass:  
         break  
     elif count*186.12 < lower_bound_mass:  
         continue  
-~~~
+{% endhighlight %}
 
 Finally we need to generate our combinations. So inside the loop, we use `itertools` to generate all the unique combinations of length N from our set of amino acids. `itertools` has two tools to perform this: `combinations` and `combinations_with_replacements`. `combinations` won't allow a residue to be used more than once, so we choose to use `combinations_with_replacements`. This allows for combinations such as a polyalanine chain, but it also allows for many more combinations. So it can get pretty slow! If we have a length 10 chain, we get 10! combinations with combinations, but 10^10 combinations with `combinations_with_replacements`. Once we have our unique combinations, we sum the mass of each one, see if it matches the criteria, and if it does, we add it to a list that stores all the polypeptides we want. Here it is:
 
-~~~python  
+{% highlight python %}  
 tot_combinations = itertools.combinations_with_replacement(AA,count)  
 for combination in tot_combinations:  
     MWs = [x[1] for x in combination]  
     if sum(MWs) >= lower_bound_mass:  
         if sum(MWs) <= upper_bound_mass:  
             possible.append(combination) 
-~~~
+{% endhighlight %}
 
 This function will then return a list of all the polypeptide chains that fit our mass criteria. All we have to do is print/write to file and go! This script gets pretty slow quite quickly, as we saw from the scaling criteria. We scale as N^N, where N is the length of our chain. I'm sure there is even more going on behind the scenes in the itertools module, but simply treating the creation of one unique combination as an "operation", we have an incredibly slow scaling method. Do you know a better way to do this? Let me know! I'd love to hear how to make this more efficient, and I am certain that some computer scientist somewhere has explored this question before... Here is the whole script:
 
-~~~python  
+{% highlight python %}  
 import random
 import itertools
 import csv
@@ -99,7 +99,7 @@ with open('polypeptides.csv','wb') as my_file:
         file_writer.writerow(aa)
 
 print "Time: ", t1-t0, " seconds"
-~~~
+{% endhighlight %}
 
 Enjoy!  
 

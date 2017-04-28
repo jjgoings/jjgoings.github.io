@@ -63,3 +63,70 @@
 .css .o,
 .css .o + .nt,
 .css .nt + .nt { color: #999; }
+
+/* Reducing padding of code blocks generally, allows horizontal
+ * scroll bars
+ */
+.highlight pre {
+    padding: 0.5em;
+    overflow-x: auto;
+}
+
+.highlight { 
+    padding: 0; 
+    -webkit-margin-start: 0px; /* Decrease margin left of code block */
+    -webkit-margin-end: 0px; /* Same, on right */
+}
+
+/* Eliminate excess padding from tables, which are only present
+ * when line numbers are present
+ */
+.highlight table { margin-bottom: 0; border: none; }
+
+/* The white-space and word-wrap directives ensure that code lines are not
+ * wrapped, and instead we end up with horizontal scroll bars. The next
+ * block handles this for code blocks with line numbers, the next for those
+ * without.
+ */
+.highlight td.code pre {
+    padding: 0;
+    white-space: pre;
+}
+
+.highlight > pre {
+    white-space: pre;
+    word-wrap: normal;
+}
+
+/* Get rid of borders around code */
+.highlight td.code { border: none; }
+
+/* Introduce right border only on line number gutter to separate
+ * line numbers and code. Introduce slight padding between line
+ * numbers and border.
+ */
+.highlight td.gutter.gl { 
+    width: 1px;
+    border: none;
+    border-right: 2px solid #cb4b16;
+    color: #93a1a1;
+    word-break: keep-all;
+    padding: 0 0.5em 0 0.1em;
+    white-space: normal;
+}
+
+/* Prevent line numbers from being selected or copied and
+ * pasted by users.
+ */
+.highlight .lineno {   
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    padding: 0; 
+    word-break: keep-all;
+}
+
+

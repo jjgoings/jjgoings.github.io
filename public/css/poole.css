@@ -156,7 +156,8 @@ code {
   padding: .25em .5em;
   font-size: 85%;
   color: #bf616a;
-  background-color: #f9f9f9;
+  background-color: #f9f9f9; 
+  /*background-color: #c1c1c1;*/
   border-radius: 3px;
 }
 pre {
@@ -184,8 +185,22 @@ pre code {
   margin-bottom: 1rem;
   border-radius: 4px;
 }
-.highlight pre {
+/*.highlight pre {
   margin-bottom: 0;
+}*/
+.highlight pre {
+    padding: 0.5em;
+    overflow-x: auto;
+}
+
+.highlight td.code pre {
+    padding: 0;
+    white-space: pre;
+}
+
+/* Doesn't seem to work; thus no horizontal scroll when line numbers absent */
+.highlight > pre {
+    white-space: pre; /* Solves horizontal scroll via black magic */
 }
 
 /* Gist via GitHub Pages */

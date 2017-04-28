@@ -19,20 +19,20 @@ First, the package I used was the [joblib](https://pythonhosted.org/joblib/index
 
 So start off your code with  
 
-~~~python  
+{% highlight python %}  
 from joblib import Parallel, delayed  
-~~~
+{% endhighlight %}
 
 If you want to execute a system command, you'll also need the `call` function from the subprocess package. So you have  
 
-~~~python  
+{% highlight python %}  
 from joblib import Parallel, delayed  
 from subprocess import call  
-~~~
+{% endhighlight %}
 
 Once you have these imported, you have to structure your code (according to the `joblib` people) like so:
 
-~~~python  
+{% highlight python %}  
 import ....
 
 def function1(...):  
@@ -45,7 +45,7 @@ def function2(...):
 if __name__ == '__main__':  
  # do stuff with imports and functions defined about  
  ...  
-~~~
+{% endhighlight %}
 
 So do you imports first (duh), then define the functions you want to do (in my case, execute a command on the command line), and then finally call that function in the main block.
 
@@ -53,24 +53,24 @@ I learn by example, so I'll show you how I pieced the rest of it together.
 
 Now, the command I was executing was the Gaussian " [cubegen](http://www.gaussian.com/g_tech/g_ur/u_cubegen.htm)" utility. So an example command looks like  
 
-~~~bash
+{% highlight bash %}
 cubegen 0 MO=50 qd.fchk 50.cube 120 h  
-~~~
+{% endhighlight %}
 
 Which makes a `.cube` file (`50.cube`) containing the volumetric data of molecular orbital 50 (MO=50) from the formatted checkpoint file (`qd.fchk`). I wanted 120 points per side, and I wanted headers printed (`120 h`).
 
 Honestly, the command doesn't matter. If you want to parallelize  
 
-~~~bash
+{% highlight bash %}
 ls -lh  
-~~~  
+{% endhighlight %}  
 over a for loop, you certainly could. That's not my business. 
 
 What _does_ matter is that we can execute these commands from a python script using the `call` function that we imported from the `subroutine` package.
 
 So we replace our functions with the system calls
 
-~~~python  
+{% highlight python %}  
 from joblib import Parallel, delayed  
 from subprocess import call
 
@@ -84,7 +84,7 @@ def listDirectory(i): #kidding, sorta.
 if __name__ == '__main__':  
  # do stuff with imports and functions defined about  
  ...  
-~~~
+{% endhighlight %}
 
 Now that we have the command(s) defined, we need to piece it together in the main block.
 
@@ -96,7 +96,7 @@ I'll also use 8 processors, so I'll define a variable `num_cores` and set it to 
 
 Putting this in, our code looks like  
 
-~~~python  
+{% highlight python %}  
 from joblib import Parallel, delayed  
 from subprocess import call
 
@@ -114,16 +114,16 @@ if __name__ == '__main__':
     npts = 120  
     num_cores = 8
 
-~~~
+{% endhighlight %}
 
 Great. Almost done.
 
 Now we need to call this function from within `Parallel()` from `joblib`.
 
-~~~python  
+{% highlight python %}  
 results = Parallel(n_jobs=num_cores)(delayed(makeCube)(i,npts)  
     for i in inputs)  
-~~~
+{% endhighlight %}
 
 The `Parallel` function (object?) first takes the number of cores as an input. You could easily hard code this if you want, or let Python's `multiprocessing` package determine the number of CPUs available to you. Next we call the function using the `delayed()` function. This is "a trick to create a tuple (function, args, kwargs) with a function-call syntax".
 
@@ -133,39 +133,39 @@ Then we feed it the list defined by our start and end values.
 
 If you wanted to list the contents of your directory 500 times and over 8 cores, it would look like (assuming you defined the function and inputs above)
 
-~~~python  
+{% highlight python %}  
 results = Parallel(n_jobs=8)(delayed(listDirectory)(i)  
      for i in inputs)  
-~~~
+{% endhighlight %}
 
 Essentially we are making the equivalence that
 
-~~~python  
+{% highlight python %}  
 delayed(listDirectory)(i) for i in inputs
-~~~
+{% endhighlight %}
 
 is the same as
 
-~~~python  
+{% highlight python %}  
 for i in inputs:
     listDirectory(i)
-~~~  
+{% endhighlight %}  
 
 Does that make sense? It's just
 
-~~~python  
+{% highlight python %}  
 delayed(function)(arguments)
-~~~  
+{% endhighlight %}  
 
 instead of
 
-~~~python
+{% highlight python %}
 function(arguments)
-~~~
+{% endhighlight %}
 
 Okay. Enough already. Putting it all together we have:  
 
-~~~python  
+{% highlight python %}  
 from joblib import Parallel, delayed  
 from subprocess import call
 
@@ -184,7 +184,7 @@ if __name__ == '__main__':
     num_cores = 8  
     results = Parallel(n_jobs=num_cores)(delayed(makeCube)(i,npts)  
         for i in inputs)  
-~~~
+{% endhighlight %}
 
 There you have it!
 

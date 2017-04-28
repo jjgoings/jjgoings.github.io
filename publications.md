@@ -2,6 +2,9 @@
 layout: page
 title: Publications
 ---
+
+**(17)** **J. J. Goings**, F. Egidi, X. Li, ''[Current development of noncollinear electronic structure theory](https://doi.org/10.1002/qua.25398),'' *Int. J. Quant. Chem.*, 2017, *Early Access*.
+
 **(16)** **J. J. Goings**, D. B. Lingerfelt, X. Li, ''[Can Quantized Vibrational Effects Be Obtained from Ehrenfest Mixed Quantum-Classical Dynamics?](http://dx.doi.org/10.1021/acs.jpclett.6b02424),'' *J. Phys. Chem. Lett.*, 2016, 7, 5193--5197.
 
 <p align="center">

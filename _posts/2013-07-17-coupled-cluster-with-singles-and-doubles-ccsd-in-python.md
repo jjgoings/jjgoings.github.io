@@ -11,7 +11,7 @@ In order to understand coupled cluster a bit better, I recently programmed the C
 
 Anyway, here you have it:
 
-~~~python  
+{% highlight python %}
 #!/usr/bin/python
 
 ####################################
@@ -314,7 +314,7 @@ while DECC > 0.000000001: # arbitrary convergence criteria
 print "E(corr,CCSD) = ", ECCSD
 print "E(CCSD) = ", ECCSD + ENUC + EN
 
-~~~
+{% endhighlight %}
 
 Boom: -2.6344 Hartrees :)
 

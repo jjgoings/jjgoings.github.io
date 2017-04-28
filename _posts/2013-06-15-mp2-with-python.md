@@ -13,7 +13,7 @@ This is actually one of the easiest electronic structure methods to program. It 
 
 Computationally speaking, we can see that we must construct four loops, to loop over our four indices. The first two must loop over occupied orbitals, and the second two must loop over virtual orbitals. I've attached some Python code that accomplishes this. Similar to the CIS and TDHF code, I have hard coded the transformed integrals for HeH+ in an [STO-3G](http://en.wikipedia.org/wiki/STO-nG_basis_sets "STO-nG basis sets") basis, at a bond length of 0.9295 Angstroms.
 
-~~~python  
+{% highlight python %}
 #!/usr/bin/python
 
 ####################################  
@@ -108,7 +108,7 @@ for i in range(0,Nelec):
 
 print "E(MP2) Correlation Energy = ", EMP2, " Hartrees"
 
-~~~
+{% endhighlight %}
 
 If you run the code you'll get a correlation energy of -0.00640 Hartrees. This is pretty small, and in fact most correlation energies are. Hartree-Fock does a good job at recovering ~99% of the energy of a molecule. However, correlation energies still translate to the order of 10 kcal/mol, which is chemically significant. This is why including correlation effects are so important. It's hard to make accurate predictions about reactivities with such large error bars when you neglect correlation. MP2 is an easy way to do so: much more accurate methods, like coupled-cluster methods, will give you energetics to chemical accuracy (chemical accuracy is ~0.1 kcal/mol). However, they are often very costly!
 

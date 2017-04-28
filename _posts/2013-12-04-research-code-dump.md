@@ -12,13 +12,13 @@ I hosted a lot of premade molecules (and their AO integrals), so all you have to
 
 For example:  
 
-~~~
+{% highlight text %}
  >>$ python pyqchem.py h2_3-21G 
-~~~
+{% endhighlight %}
 
 Would execute the `pyqchem.py` script on the folder `h2_3-21G`, which contains all the precomputed atomic-orbital basis integrals. The type of calculation is changed by editing the `pyqchem.py` script itself. Say I wanted to perform an MP2 calculation on H2 in a 3-21G basis. I open `pyqchem.py`, and edit at the top:
 
-~~~python  
+{% highlight python %}  
 
 """ Edit below to perform the calculation desired  
 """
@@ -35,13 +35,13 @@ do_eommbptd = False    # Set to False so we don't do EOM-MBPT(D)
 printops = True        # True prints more stuff  
 convergence = 1.0e-8   # Our iterative convergence criteria
 
-~~~  
+{% endhighlight %}  
 
 Then run:  
 
-~~~
+{% highlight text %}
  >>$ python pyqchem.py h2_3-21G  
-~~~  
+{% endhighlight %}
 
 And you'll see the pretty output dump to your terminal :)
 

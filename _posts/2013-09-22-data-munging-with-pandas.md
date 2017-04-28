@@ -7,7 +7,7 @@ I'm almost embarassed I haven't heard of pandas until now. [pandas](http://panda
 
 So before when I wanted to get a list of NFL teams for my ranking programs, I did something like this:
 
-~~~python  
+{% highlight python %}  
 def get_teams():  
     """ Get team data from masseyratings.com,  
       parse it into a dictionary with team number  
@@ -19,10 +19,11 @@ def get_teams():
     for i in range(0,len(s)/2):  
         my_teamnames.update({i : s[i*2 + 1]})  
     return my_teamnames  
-~~~
+{% endhighlight %}
 
 Not really intuitive what I did there, mostly a lot of hacking to get the list of teams in a usable fashion for the rest of the program. It returns a python dictionary, and it looks like this:
 
+{% highlight python %}
     {0: 'Arizona',
      1: 'Atlanta',
      2: 'Baltimore',
@@ -30,21 +31,22 @@ Not really intuitive what I did there, mostly a lot of hacking to get the list o
      29: 'Tampa_Bay',
      30: 'Tennessee',
      31: 'Washington'}
+{% endhighlight %}
 
 Let's do it a better way.  
 Here is how we do it with `pandas` (imported as `pd`):
 
-~~~python  
+{% highlight python %}  
 def get_teams():  
     team_data = urllib2.urlopen('http://www.masseyratings.com/scores.php?s=199229&sub=199229&all=1&mode=3&format=2')  
     teams = pd.read_csv(team_data, header=None)  
     teams.columns = ['Team_ID', 'Team_name']  
     return teams  
-~~~
+{% endhighlight %}
 
 A mere four lines of code, each with a distinct (and clear) purpose! First line, open the webpage containing data. Second line, read in the data to a pandas `DataFrame` object (think a spreadsheet). Third, name the columns, and finally return the object, which looks like so:
 
-~~~
+{% highlight text %}
     Team_ID Team_name
     0 1 Arizona
     1 2 Atlanta
@@ -53,11 +55,11 @@ A mere four lines of code, each with a distinct (and clear) purpose! First line,
     29 30 Tampa_Bay
     30 31 Tennessee
     31 32 Washington
-~~~
+{% endhighlight %}
 
 The first column is the index, which starts at zero in a pythonic manner. The second column is team ID, which is what the data itself uses. So don't get confused by those numbers. Having a `DataFrame` object allows us to easily index the columns and rows. It also easily allows us to add columns to it. So say we get a rating vector, and want to pair it up with our team names. Before I did it like so:
 
-~~~python  
+{% highlight python %}  
 def write_sorted(teams,rating):  
     combine = np.vstack((rating,teams))  
     sort_combine = np.array(sorted(combine.T,key=tuple,reverse=True))  
@@ -65,20 +67,20 @@ def write_sorted(teams,rating):
     for i in range(0,len(teams)):  
         f.write(str(team_name[int(sort_combine[i,1])])+', '+str(sort_combine[i,0])+'\n')  
     f.close()  
-~~~
+{% endhighlight %}
 
 Again, kind of a hack to stack the lists (via `vstack`), then sort them by rating, which involves transposing the array, using tuple keys...and if you've never done this before you have to look up all the options. And then you have to write to file in such a way as to link up team names with the ID in the vector...it's messy and I don't like it. So let's try it with `pandas`. You saw the team object before, right? Now we do:
 
-~~~python  
+{% highlight python %}  
 def write_sorted(teams,rating,filename):  
     teams['rating'] = rating  
     teams = teams.sort(columns='rating',ascending=False)  
     teams.to_csv(filename)  
-~~~
+{% endhighlight %}
 
 Done. (Of course we can add different formatting options, too). Add a column titled `rating` to our teams object, sort by the column `rating`, in descending order, then write to file. SO EASY. And here we have it:
 
-~~~
+{% highlight text %}
     Team_ID,Team_name,rating
     13, Houston,0.7603317475519333
     19, New_England,0.7582151079219482
@@ -88,7 +90,7 @@ Done. (Of course we can add different formatting options, too). Add a column tit
     18, Minnesota,0.2838074821824212
     25, Pittsburgh,0.24660385713879754
     32, Washington,0.20859838193293445
-~~~
+{% endhighlight %}
 
 It's just so simple, and I'm really glad that I found this module for my python programs!
 

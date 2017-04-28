@@ -7,6 +7,8 @@ Below you can find several notes and derivations for various topics related to e
 
 In no particular order:
 
+[Guide to Molecular Integral Evaluation](/assets/integrals.pdf)
+
 [The Dirac Equation for a Free Particle](/assets/dirac.pdf)
 
 [The Dirac-Hartree-Fock Equation](/assets/dirac-hartree-fock.pdf)

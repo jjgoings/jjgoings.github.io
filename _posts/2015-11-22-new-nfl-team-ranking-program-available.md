@@ -11,7 +11,7 @@ I've become increasingly dissatisfied with my old [NFL Colley ranking system](ht
 
 For example, now  
 
-~~~python
+{% highlight python %}
 from season import Season
 
 season = Season()  
@@ -19,11 +19,11 @@ season.year = 2014 # default season is 2015
 season.massey() # Massey ranking method, unweighted  
 for team in season.rating:  
     print team  
-~~~
+{% endhighlight %}
 
 Which gives the output
 
-~~~bash
+{% highlight bash %}
 ['NE', 11.407605241747872]  
 ['DEN', 9.6038904227178108]  
 ['SEA', 9.5169656599013628]  
@@ -33,7 +33,7 @@ Which gives the output
 ['TB', -9.8107991356959232]  
 ['JAC', -10.427123019821691]  
 ['TEN', -11.805248019821692]
-~~~
+{% endhighlight %}
 
 So obviously the NE Patriots were ranked #1 for the 2014 season with this method. You'll recall they ended up winning the Super Bowl that same season.
 

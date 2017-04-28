@@ -11,7 +11,7 @@ $$ (pq\vert rs)=\sum_\mu\sum_\nu\sum_\lambda\sum_\sigma C^{p}_\mu C^{q}_\nu C^{r
 
 In code, that looks something like:
 
-~~~python
+{% highlight python %}
 
 for p in range(0,dim):  
     for q in range(0,dim):  
@@ -23,7 +23,7 @@ for p in range(0,dim):
                             for sig in range(0,dim):  
                                 TxInt[p,q,r,s] += C[p,mu]*C[q,nu]*C[r,lam]*C[s,sig]*UnTxInt[mu,nu,lam,sig]
 
-~~~
+{% endhighlight %}
 
 Holy cow. EIGHT loops of dimension number of basis functions. That should scale on the order of $$ N^8$$. Few methods in electronic structure theory scale worse than that (though they do exist...here's lookin' at you [Full CI](http://en.wikipedia.org/wiki/Full_configuration_interaction "Full configuration interaction")). This means that for most calculations, if you use this method of integral transformation, this transformation will be your most expensive step. Thankfully, we can come up with a smarter way to do the above transformation. Because the coefficients are independent (i.e $$ C^{p}_\mu$$ is independent of $$ C^{q}_\nu$$), we can rewrite our first equation as
 
@@ -41,7 +41,7 @@ $$ (pq\vert rs)=\sum_\mu C^{p}_\mu(\mu q\vert rs)$$
 
 Where we perform four "quarter-transformations", save each transformation, and use in the next transformation. Doing it this way gives us four steps of 5-dimension loops, so it should scale on the order of $$ N^5$$. In code, that looks like:
 
-~~~python
+{% highlight python %}
 
 for p in range(0,dim):  
     for mu in range(0,dim):  
@@ -55,11 +55,11 @@ for p in range(0,dim):
             for s in range(0,dim):  
                 for sig in range(0,dim):  
                     TxInt[p,q,r,s] += C[s,sig]*temp3[p,q,r,sig]
-~~~
+{% endhighlight %}
 
-Much nicer. You'll notice that we had to pre-allocate the 'temp' matrices, to store the results between quarter transformations. (By the way, if anyone knows how to clear these matrices from memory -- like you can in C or FORTRAN -- after you are done with the transformation, let me know...I can't find it anywhere and I am unsure that [Python](http://www.python.org/ "Python (programming language)") does a good job handling the memory anyway). The transformation also makes use of the 'slice' notation in Python/ [NumPy](http://www.numpy.org/ "NumPy"). Using this, we perform a transformation over a whole dimension, instead of one index at a time. It's a little weird to be working with full dimensions, instead of just indices, but it works well. Here is the full code, with random integer arrays built in to act as our toy four-dimensional integrals. The toy matrix of coefficients, is, like all matrices, 2D. I built in a check, so you can compare the two methods. It spits out two transformed integrals with randomly chosen indices -- if/when you run it, you should make sure that the values match. If they don't, something is wrong!
+Much nicer. You'll notice that we had to pre-allocate the 'temp' matrices, to store the results between quarter transformations. The transformation also makes use of the 'slice' notation in Python/ [NumPy](http://www.numpy.org/ "NumPy"). Using this, we perform a transformation over a whole dimension, instead of one index at a time. It's a little weird to be working with full dimensions, instead of just indices, but it works well. Here is the full code, with random integer arrays built in to act as our toy four-dimensional integrals. The toy matrix of coefficients, is, like all matrices, 2D. I built in a check, so you can compare the two methods. It spits out two transformed integrals with randomly chosen indices -- if/when you run it, you should make sure that the values match. If they don't, something is wrong!
 
-~~~python  
+{% highlight python %} 
 #!/usr/bin/python
 
 ####################################  
@@ -130,9 +130,9 @@ print MO1[i,j,k,l]
 print MO2[i,j,k,l]  
 print "TIME1: ", t1-t0  
 print "TIME2: ", t3-t2  
-~~~
+{% endhighlight %}
 
-When I ran the code, moving from a dimension of 4 to a dimension of 8 (e.g I doubled the basis functions), the first method went from 0.29 seconds to 71.5 seconds, a jump of **246**  **time**** s longer **, versus the second method, which went from 0.01 seconds to 0.29 seconds, a jump of only** 29 times**. This is almost exactly as predicted. Doubling the basis for an $$ N^8$$ method gives $$ 2^8 = 256$$ times longer, and doubling the basis for an $$ N^5$$ algorithm gives $$ 2^5 = 32$$ times longer.
+When I ran the code, moving from a dimension of 4 to a dimension of 8 (e.g I doubled the basis functions), the first method went from 0.29 seconds to 71.5 seconds, a jump of 246 times longer, versus the second method, which went from 0.01 seconds to 0.29 seconds, a jump of only 29 times. This is almost exactly as predicted. Doubling the basis for an $$ N^8$$ method gives $$ 2^8 = 256$$ times longer, and doubling the basis for an $$ N^5$$ algorithm gives $$ 2^5 = 32$$ times longer.
 
 The new method is also very amenable to parallelization. Most electronic structure computations need to be parallelized, as model systems get larger and larger. Note that the $$ N^5$$ method is performed in four independent steps. Because of this independence, we can make our code run in parallel, and perform the quarter transformations on separate processors.
 

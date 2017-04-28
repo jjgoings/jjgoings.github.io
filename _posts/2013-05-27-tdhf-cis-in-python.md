@@ -27,7 +27,7 @@ $$ \langle pq\vert \vert rs \rangle =\langle pq\vert rs \rangle - \langle ps\ver
 
 We can also account for that in our transformation. In Python this gives:
 
-~~~python  
+{% highlight python %}
 # Create spin-adapted two electron integral  
 # in double-bar format in a 4D array 'ints'  
 # teimo(i,j,k,l) grabs MO basis (pq | rs) value  
@@ -41,23 +41,23 @@ for p in range(1,dim*2+1):
                 value2 = teimo((p+1)//2,(s+1)//2,(q+1)//2,(r+1)//2) * (p%2 == s%2) * (q%2 == r%2)  
                 ints[p-1,q-1,r-1,s-1] = value1 - value2
 
-~~~
+{% endhighlight %}
 
 Now, because Python begins its indexing at '0', and I began my indexing at '1', I had to make the index change at the end. From now on, the indexing starts at '0', so that $$ (11\vert 11) = (00\vert 00)$$ and so on. Now that we have our integrals, we can also spin adapt our orbital energies. This basically maps spatial orbital energy 1 (which contains two electrons) to spin orbital 1 and 2: odd numbers are spin up, even numbers are spin down. If the spatial orbitals are found in an array 'E', now moved to an array of double the dimension 'fs':
 
-~~~python  
+{% highlight python %} 
 # Spin basis fock matrix eigenvalues  
 fs = np.zeros((dim*2))  
 for i in range(0,dim*2):  
     fs[i] = E[i//2]  
 fs = np.diag(fs)  
-~~~
+{% endhighlight %}
 
 Simple enough.
 
 Putting it altogether then (I hard coded the initial values for self-containment):
 
-~~~python  
+{% highlight python %} 
 #!/usr/bin/python
 
 ####################################
@@ -168,7 +168,7 @@ print "E(CIS) = ", np.amax(ECIS)
 M = np.bmat([[A,B],[-B,-A]])
 ETD,CTD = np.linalg.eig(M)
 print "E(TDHF) = ", abs(np.amax(ETD))
-~~~
+{% endhighlight %}
 
 Running the code we find our first excitation energy at the CIS level is E(CIS) = 0.911, and our first excitation at the TDHF level is E(TDHF) = 0.902, (all in Hartrees) in agreement with the literature values in the paper [here](http://link.aip.org/link/doi/10.1063/1.3020336 "Modeling the doubly excited state with time-dependent Hartree–Fock and density functional theories"). A couple of notes about the method. First, the TDHF method can be seen as an extension of the CIS approach. The $$ A$$ matrix in the TDHF working equations is just the CIS matrix. This also means that the TDHF matrix is _twice_ the dimension of the CIS matrix ( **four** times as large), which can get very costly. With a little bit of (linear) algebra, we can get the TDHF equations in the form:
 
@@ -178,7 +178,7 @@ Which is the same dimension as the CIS matrix. This is why you rarely see CIS in
 
 For your reference, the transformed two electron integrals $$ (pq\vert rs) $$ are given below, first four columns are index of p,q,r,s, and the last column is the value:
 
-~~~
+{% highlight text %}
 
 1 1 1 1 0.94542695583  
 1 1 1 2 0.175358953815  
@@ -197,7 +197,7 @@ For your reference, the transformed two electron integrals $$ (pq\vert rs) $$ ar
 2 2 2 1 -0.0568211436214  
 2 2 2 2 0.747154647844
 
-~~~
+{% endhighlight %}
 
  
 

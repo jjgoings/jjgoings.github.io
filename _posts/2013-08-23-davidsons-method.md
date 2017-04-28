@@ -11,32 +11,32 @@ I wanted to try it out, so I implemented Davidson's method on a Hermitian matrix
 
 Let's step through what I've done and see if it makes this method any clearer. The first bit simply creates our fake Hamiltonian.
 
-~~~python  
+{% highlight python %}  
 sparsity = 0.000001  
 A = np.zeros((n,n))  
 for i in range(0,n):  
     A[i,i] = i + 1  
 A = A + sparsity*np.random.randn(n,n)  
 A = (A.T + A)/2  
-~~~
+{% endhighlight %}
 
 While it may look arbitrary, take a closer look at the structure. First, it is diagonally dominant. The diagonal is filled with increasing integers, while the off-diagonals are random numbers multiplied by a scaling factor to "mute" them somewhat. This adds sparsity. Davidson's method really excels with sparse, diagonally dominant matrices. This is actually very similar to the Hamiltonians we encounter as quantum chemists. If you scale the sparsity down and approach zero, the Davidson method speeds up fast. (But don't set it to exactly zero or it will crash --- in this case the matrix is already diagonalized!)
 
 Next we set up our subspace "trial vectors":
 
-~~~python  
+{% highlight python %}  
 k = 8 # number of initial guess vectors  
 eig = 4 # number of eignvalues to solve  
 t = np.eye(n,k) # set of k unit vectors as guess  
 V = np.zeros((n,n)) # array of zeros to hold guess vec  
 I = np.eye(n) # identity matrix same dimen as A  
-~~~
+{% endhighlight %}
 
 Since we are choosing to find the first four eigenvalues, we need at least four guess vectors k. In practice, we choose maybe twice to three times that, because we want to increase the span of our guess space. In other words, it helps us hone in on the appropriate eigenvectors faster. But don't make the guess too big! If it gets too large, we basically end up diagonalizing the whole matrix --- which we don't want to do, since that is the whole point of Davidson's method. Speaking of the span of the guess vectors, it is important to make a good initial guess. Because the matrix is diagonally dominant, I chose a set of unit vectors as my guess, which is a good since our matrix is so close to being scalar multiples of the identity matrix.
 
 Finally we get to the meat of the main routine:
 
-~~~python  
+{% highlight python %}  
 for m in xrange(k,mmax,k):  
     if m <= k:  
         for j in xrange(0,k):  
@@ -57,19 +57,19 @@ for m in xrange(k,mmax,k):
     norm = np.linalg.norm(theta[:eig] - theta_old)  
     if norm < tol:  
         break  
-~~~
+{% endhighlight %}
 
 **UPDATE (and hat tip to Matthew Goldey!): ** _Replace_
 
-~~~python  
+{% highlight python %}  
 q = np.dot(np.linalg.inv(theta[j]*I - np.diag(np.diag(A))),w)  
-~~~
+{% endhighlight %}
 
 _with_
 
-~~~python  
+{% highlight python %}  
 q = w/(theta[j] - A[j,j])  
-~~~
+{% endhighlight %}
 
 _for a major speed-up. Letting NumPy figure out how to invert a scalar is dumb. Thanks for pointing this out Matthew!_
 
@@ -79,18 +79,18 @@ Next we ensure our vectors are orthonormal among each other with numpy's [QR dec
 
 Here is some sample output:
 
-~~~
+{% highlight text %}
 
 davidson = [0.99999921 2.00000133 3.00000042 3.99999768] ; 0.6596 seconds  
 numpy = [0.99999921 2.00000133 3.00000042 3.99999768] ; 1.7068 seconds
 
-~~~
+{% endhighlight %}
 
 You can see it works! (And the eigenvalues are really similar to the integer values we put along the diagonal).
 
 I've attached the full routine at the end. With a sparse enough matrix, I can beat numpy by about a second. Of course, comparisons aren't really fair, since I make numpy compute all the eigenvalues. From what I know, this method has a lot of intricacies, and I am still learning many of them. If you know of any ways I can improve this code, let me know! Comments and messages are always appreciated.
 
-~~~python
+{% highlight python %}
 
 #!/bin/python
 
@@ -179,7 +179,7 @@ end_numpy = time.time()
 print "numpy = ", E[:eig],";",\
      end_numpy - start_numpy, "seconds" 
 
-~~~
+{% endhighlight %}
 
 
 
