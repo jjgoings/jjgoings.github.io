@@ -5,6 +5,10 @@ title: Presentations
 
 Here you can find links to talks that I have given in the past, both formal and informal, starting from the most recent.
 
+**253rd ACS National Meeting** \\
+*San Francisco, CA* (2017) \\
+["Can quantized vibrational effects be obtained from Ehrenfest mixed quantum classical dynamics?"](/assets/ACS-253-ehrenfest.pdf)
+
 **Guest Lecture for SPU's Intro to Research Methods Course** \\
 *Seattle, WA* (2016) \\
 ["Molecules and Light (or, Why you see what you see)"](/assets/SPU-2016.pdf)
