@@ -1,3 +1,10 @@
+---
+layout: post
+title: Molecular integrals over Gaussian basis functions 
+---
+
+[Check out the PDF here](../assets/integrals.pdf)
+
 In quantum chemistry, we are often interested in evaluating integrals
 over Gaussian basis functions. Here I am going to take much of the
 theory for granted and talk about how one might actually implement the
