@@ -3,7 +3,7 @@ layout: post
 title: A (hopefully) gentle guide to the computer implementation of molecular integrals over Gaussian basis functions. 
 ---
 
-[Check out the PDF here](../assets/integrals.pdf)
+[Check out the PDF here]({{ site.baseurl }}/assets/integrals.pdf)
 
 In quantum chemistry, we are often interested in evaluating integrals
 over Gaussian basis functions. Here I am going to take much of the
