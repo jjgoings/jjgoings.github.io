@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Molecular integrals over Gaussian basis functions 
+title: A (hopefully) gentle guide to the computer implementation of molecular integrals over Gaussian basis functions. 
 ---
 
 [Check out the PDF here](../assets/integrals.pdf)
