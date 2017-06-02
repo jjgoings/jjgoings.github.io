@@ -147,8 +147,10 @@ fs = np.diag(fs)
 #
 ######################################################
 
-A = np.zeros((2*dim,2*dim))
-B = np.zeros((2*dim,2*dim))
+NOV = Nelec*(2*dim-Nelec)
+
+A = np.zeros((NOV,NOV))
+B = np.zeros((NOV,NOV))
 I = -1
 for i in range(0,Nelec):
   for a in range(Nelec,dim*2):
