@@ -4,6 +4,7 @@ title: Presentations
 ---
 
 Here you can find links to talks that I have given in the past, both formal and informal, starting from the most recent.
+
 **PhD Final Defense** \\
 *Seattle, WA* (2017) \\
 ["Breaking symmetry in time-dependent electronic structure theory to describe spectroscopic properties of noncollinear and chiral molecules"](/assets/final-defense.pdf)
