@@ -2,15 +2,19 @@
 layout: page
 title: Publications
 ---
+**(18)** F. Egidi, S. Sun, **J. J. Goings**, G. Scalmani, M. J. Frisch, X. Li, ''[Two-Component Noncollinear Time-Dependent Spin Density Functional Theory for Excited State Calculations](https://doi.org/10.1021/acs.jctc.7b0010),'' *J. Chem. Theory. Comput.*, 2017, 13 (6), 2591--2603.
 
-**(17)** **J. J. Goings**, F. Egidi, X. Li, ''[Current development of noncollinear electronic structure theory](https://doi.org/10.1002/qua.25398),'' *Int. J. Quant. Chem.*, 2017, *Early Access*.
+<p align="center">
+  <img src="/assets/pub18toc.gif" height="200"/>
+</p>
+
+**(17)** **J. J. Goings**, F. Egidi, X. Li, ''[Current development of noncollinear electronic structure theory](https://doi.org/10.1002/qua.25398),'' *Int. J. Quant. Chem.*, 2017;00:e25398.
 
 **(16)** **J. J. Goings**, D. B. Lingerfelt, X. Li, ''[Can Quantized Vibrational Effects Be Obtained from Ehrenfest Mixed Quantum-Classical Dynamics?](http://dx.doi.org/10.1021/acs.jpclett.6b02424),'' *J. Phys. Chem. Lett.*, 2016, 7, 5193--5197.
 
 <p align="center">
   <img src="/assets/pub16toc.gif" height="200"/>
 </p>
-
 
 **(15)** D. Williams-Young, **J. J. Goings**, X. Li, ''[Accelerating Real-Time
 Time-Dependent Density Functional Theory with a Non-Recursive Chebyshev
