@@ -3,7 +3,9 @@ layout: post
 title: A (hopefully) gentle guide to the computer implementation of molecular integrals over Gaussian basis functions. 
 ---
 
-[Check out the PDF here]({{ site.baseurl }}/assets/integrals.pdf)
+**Note: You can find the following integral routines implemented in a working [Hartree-Fock code here](https://github.com/jjgoings/McMurchie-Davidson).**
+
+[PDF version]({{ site.baseurl }}/assets/integrals.pdf)
 
 In quantum chemistry, we are often interested in evaluating integrals
 over Gaussian basis functions. Here I am going to take much of the
