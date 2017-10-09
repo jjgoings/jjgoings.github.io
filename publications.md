@@ -2,7 +2,7 @@
 layout: page
 title: Publications
 ---
-**(19)** **J. J. Goings**, P. J. Lestrange, X. Li, ''[Real-Time Time Dependent Electronic Structure Theory](),'' *Wiley Interdiscip. Rev. Comput. Mol. Sci.*, 2017, *Just accepted*.
+**(19)** **J. J. Goings**, P. J. Lestrange, X. Li, ''[Real-Time Time Dependent Electronic Structure Theory](https://doi.org/10.1002/wcms.1341),'' *Wiley Interdiscip. Rev. Comput. Mol. Sci.*, 2017, e1341.
 
 **(18)** F. Egidi, S. Sun, **J. J. Goings**, G. Scalmani, M. J. Frisch, X. Li, ''[Two-Component Noncollinear Time-Dependent Spin Density Functional Theory for Excited State Calculations](https://doi.org/10.1021/acs.jctc.7b0010),'' *J. Chem. Theory. Comput.*, 2017, 13 (6), 2591--2603.
 
