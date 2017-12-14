@@ -59,7 +59,7 @@ where we used the Gaussian product theorem so that
 
 $$\begin{align}
 K_{AB} &= \hbox{exp}(-q Q_x^2),\\ 
-Q_x &= \alpha A_x - \beta B_x, \\
+Q_x &= A_x - B_x, \\
 q &= \frac{\alpha\beta}{\alpha + \beta}, \\ 
 p &= \alpha + \beta,\quad  \hbox{and}, \\
 P_x &= \frac{1}{p}\left(\alpha A_x + \beta B_x\right).\end{align}$$
@@ -330,9 +330,9 @@ $$\mathbf{P}$$ and a nuclei centered at $$\mathbf{C}$$. The Hermite Coulomb
 integral, like its counterpart $$E_t^{ij}$$, is defined recursively:
 
 $$\begin{align}
-R^{n}_{t+1,u,v} &= t R^{n+1}_{t-1,u,v} + X_{PC}R^{n+1}_{tuv} \\
-R^{n}_{t,u+1,v} &= t R^{n+1}_{t,u-1,v} + Y_{PC}R^{n+1}_{tuv} \\
-R^{n}_{t,u,v+1} &= t R^{n+1}_{t,u,v-1} + Z_{PC}R^{n+1}_{tuv} \\
+R^{n}_{t+1,u,v} &= t R^{n+1}_{t-1,u,v} + X_{PC}R^{n+1}_{t,u,v} \\
+R^{n}_{t,u+1,v} &= u R^{n+1}_{t,u-1,v} + Y_{PC}R^{n+1}_{t,u,v} \\
+R^{n}_{t,u,v+1} &= v R^{n+1}_{t,u,v-1} + Z_{PC}R^{n+1}_{t,u,v} \\
 R^{n}_{0,0,0}   &= (-2p)^n F_n (p R_{PC}^2) \end{align}$$ 
 
 where $$F_n(T)$$ is the Boys function
