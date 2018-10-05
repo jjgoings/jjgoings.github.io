@@ -9,7 +9,7 @@ Thankfully there are some wonderful resources available to understand the couple
 
 In order to understand coupled cluster a bit better, I recently programmed the CCSD energy and amplitude equations in [Python](http://en.wikipedia.org/wiki/Python_%28programming_language%29 "Python (programming language)"). It is for a HeH+ molecule with a bond length of 0.9295 Angstrom, using an [STO-3G](http://en.wikipedia.org/wiki/STO-nG_basis_sets "STO-nG basis sets") basis --- same system I've used before on this blog. The results match what Gaussian09 calculates as well, so I was pretty happy to see it work. As always, I've hard-coded the two-electron integrals and other SCF results into the program, so you can just focus on what CCSD does. The functions will look esoteric, and unless you've worked with coupled-cluster before, the program should NOT look intuitive or easy to understand --- point is, don't panic. But I've provided a reference Stanton (1991) that contains all the equations used. Between Stanton and Crawford, you can understand what is going on here. Read through the comments to get a better idea: the main idea is to take the results of an SCF calculation and apply them to a similarity transformation of the Hamiltonian. The transformed Hamiltonian now contains 'excited' determinants, which is the requirement for electron correlation --- in other words you get a multi-reference quality calculation from a single reference (a [Hartree-Fock](http://en.wikipedia.org/wiki/Hartree%E2%80%93Fock_method "Hartree–Fock method") calculation).
 
-Anyway, here you have it:
+Anyway, here you have it (thanks to Junhao Li for pointing out bugs in the code!):
 
 {% highlight python %}
 #!/usr/bin/python
