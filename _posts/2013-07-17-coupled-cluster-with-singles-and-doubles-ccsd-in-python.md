@@ -11,7 +11,7 @@ In order to understand coupled cluster a bit better, I recently programmed the C
 
 Anyway, here you have it:
 
-(And thanks to Junhao Li for pointing out bugs in the code! Everything should be correct now.):
+(And thanks to [Junhao Li](https://github.com/jl2922) for pointing out bugs in the code! Everything should be correct now.):
 
 {% highlight python %}
 #!/usr/bin/python
