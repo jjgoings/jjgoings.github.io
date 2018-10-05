@@ -257,12 +257,12 @@ def makeT2(x,ts,td):
             for e in range(Nelec,dim):
               tdnew[a,b,i,j] += td[a,e,i,j]*Fae[b,e] - td[b,e,i,j]*Fae[a,e]
               for m in range(0,Nelec):
-                tdnew[a,b,i,j] += -0.5*td[a,e,i,j]*ts[b,m]*Fme[m,e] + 0.5*td[a,e,i,j]*ts[a,m]*Fme[m,e]
+                tdnew[a,b,i,j] += -0.5*td[a,e,i,j]*ts[b,m]*Fme[m,e] + 0.5*td[b,e,i,j]*ts[a,m]*Fme[m,e]
                 continue
             for m in range(0,Nelec):
               tdnew[a,b,i,j] += -td[a,b,i,m]*Fmi[m,j] + td[a,b,j,m]*Fmi[m,i]
               for e in range(Nelec,dim):
-                tdnew[a,b,i,j] += -0.5*td[a,b,i,m]*ts[e,j]*Fme[m,e] + 0.5*td[a,b,i,m]*ts[e,i]*Fme[m,e]
+                tdnew[a,b,i,j] += -0.5*td[a,b,i,m]*ts[e,j]*Fme[m,e] + 0.5*td[a,b,j,m]*ts[e,i]*Fme[m,e]
                 continue
             for e in range(Nelec,dim):
               tdnew[a,b,i,j] += ts[e,i]*spinints[a,b,e,j] - ts[e,j]*spinints[a,b,e,i]
@@ -272,10 +272,10 @@ def makeT2(x,ts,td):
             for m in range(0,Nelec):
               tdnew[a,b,i,j] += -ts[a,m]*spinints[m,b,i,j] + ts[b,m]*spinints[m,a,i,j]  
               for e in range(Nelec,dim):
-                tdnew[a,b,i,j] += td[a,e,i,m]*Wmbej[m,b,e,j] - ts[e,i]*ts[a,m]*spinints[m,b,e,j]
+                tdnew[a,b,i,j] +=  td[a,e,i,m]*Wmbej[m,b,e,j] - ts[e,i]*ts[a,m]*spinints[m,b,e,j]
                 tdnew[a,b,i,j] += -td[a,e,j,m]*Wmbej[m,b,e,i] + ts[e,j]*ts[a,m]*spinints[m,b,e,i]
-                tdnew[a,b,i,j] += -td[b,e,i,m]*Wmbej[m,a,e,j] - ts[e,i]*ts[b,m]*spinints[m,a,e,j]
-                tdnew[a,b,i,j] += td[b,e,j,m]*Wmbej[m,a,e,i] - ts[e,j]*ts[b,m]*spinints[m,a,e,i]
+                tdnew[a,b,i,j] += -td[b,e,i,m]*Wmbej[m,a,e,j] + ts[e,i]*ts[b,m]*spinints[m,a,e,j]
+                tdnew[a,b,i,j] +=  td[b,e,j,m]*Wmbej[m,a,e,i] - ts[e,j]*ts[b,m]*spinints[m,a,e,i]
                 continue
               for n in range(0,Nelec):
                 tdnew[a,b,i,j] += 0.5*tau(a,b,m,n)*Wmnij[m,n,i,j]
@@ -306,8 +306,10 @@ DECC = 1.0
 while DECC > 0.000000001: # arbitrary convergence criteria
   OLDCC = ECCSD
   Fae,Fmi,Fme,Wmnij,Wabef,Wmbej = updateintermediates(True)
-  ts = makeT1(True,ts,td)
-  td = makeT2(True,ts,td)
+  tsnew = makeT1(True,ts,td)
+  tdnew = makeT2(True,ts,td)
+  ts = tsnew
+  td = tdnew
   ECCSD = ccsdenergy()
   DECC = abs(ECCSD - OLDCC)
 
