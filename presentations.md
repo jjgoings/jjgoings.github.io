@@ -5,6 +5,11 @@ title: Presentations
 
 Here you can find links to talks that I have given in the past, both formal and informal, starting from the most recent.
 
+**Group Meeting** \\
+*New Haven, CT* (2018) \\
+["Impact of Protein Environment on Slr1694 BLUF Photoreceptor"](/assets/bluf-oct-2018.pdf)
+
+
 **PhD Final Defense** \\
 *Seattle, WA* (2017) \\
 ["Breaking symmetry in time-dependent electronic structure theory to describe spectroscopic properties of noncollinear and chiral molecules"](/assets/final-defense.pdf)
