@@ -80,8 +80,8 @@ delta $$\delta_{t0}$$. It can be shown that the expansion coefficients can
 be defined using the following recursive definitions 
 
 $$\begin{align}
-E^{ij}_t &= \frac{1}{2p}E^{i,j-1}_{t-1} - \frac{qQ_x}{a} E_{t}^{i,j-1} + (t+1) E_{t+1}^{i,j-1}, \\
-E^{ij}_t &= \frac{1}{2p}E^{i-1,j}_{t-1} + \frac{qQ_x}{a} E_{t}^{i-1,j} + (t+1) E_{t+1}^{i-1,j}, \\
+E^{ij}_t &= \frac{1}{2p}E^{i,j-1}_{t-1} + \frac{qQ_x}{\beta} E_{t}^{i,j-1} + (t+1) E_{t+1}^{i,j-1}, \\
+E^{ij}_t &= \frac{1}{2p}E^{i-1,j}_{t-1} - \frac{qQ_x}{\alpha} E_{t}^{i-1,j} + (t+1) E_{t+1}^{i-1,j}, \\
 E^{00}_{0} &= K_{AB}, \\
 E^{ij}_t &= 0 \quad \hbox{if} \quad t < 0, \quad \hbox{or} \quad t > i+j\end{align}$$
 
@@ -264,7 +264,7 @@ $$T_{ab} = -\frac{1}{2}\left[D_{ij}^2 S_{kl} S_{mn} + S_{ij}D_{kl}^2 S_{mn} + S_
 
 where 
 
-$$D_{ij}^2 = j(j-1)S_{i,j-2} - 2b(2j +1)S_{ij} + 4b^2 S_{i,j+2}$$
+$$D_{ij}^2 = j(j-1)S_{i,j-2} - 2\beta(2j +1)S_{ij} + 4\beta^2 S_{i,j+2}$$
 
 For a 3D primitive, we can form a `kinetic` function analogous to
 `overlap`,
