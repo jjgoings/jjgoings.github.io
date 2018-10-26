@@ -216,10 +216,28 @@ class BasisFunction(object):
         '''
         l,m,n = self.shell
         # self.norm is a list of length equal to number primitives
+        # normalize primitives first (PGBFs)
         self.norm = np.sqrt(np.power(2,2*(l+m+n)+1.5)*
                         np.power(self.exps,l+m+n+1.5)/
                         fact2(2*l-1)/fact2(2*m-1)/
                         fact2(2*n-1)/np.power(np.pi,1.5))
+
+        # now normalize the contracted basis functions (CGBFs)
+        # Eq. 1.44 of Valeev integral whitepaper
+        prefactor = np.power(np.pi,1.5)*\
+            fact2(2*l - 1)*fact2(2*m - 1)*fact2(2*n - 1)/np.power(2.0,L)
+
+        N = 0.0
+        num_exps = len(self.num_exps)
+        for ia in range(num_exps):
+            for ib in range(num_exps):
+                N += self.norm[ia]*self.norm[ib]*self.coefs[ia]*self.coefs[ib]/
+                         np.power(self.exps[ia] + self.exps[ib],L+1.5)
+
+        N *= prefactor
+        N = np.power(N,-0.5)
+        for ia in range(num_exps):
+            self.coefs[ia] *= N
 {% endhighlight %}
 
 So, for example if we had a STO-3G Hydrogen 1s at origin (1.0, 2.0,
@@ -422,23 +440,23 @@ def nuclear_attraction(a,lmn1,A,b,lmn2,B,C):
          A:    list containing origin of Gaussian 'a', e.g. [1.0, 2.0, 0.0]
          B:    list containing origin of Gaussian 'b'
          C:    list containing origin of nuclear center 'C'
-     '''
-     l1,m1,n1 = lmn1 
-     l2,m2,n2 = lmn2
-     p = a + b
-     P = gaussian_product_center(a,A,b,B) # Gaussian composite center
-     RPC = np.linalg.norm(P-C)
- 
-     val = 0.0
-     for t in xrange(l1+l2+1):
-         for u in xrange(m1+m2+1):
-             for v in xrange(n1+n2+1):
-                 val += E(l1,l2,t,A[0]-B[0],a,b) * \
-                        E(m1,m2,u,A[1]-B[1],a,b) * \
-                        E(n1,n2,v,A[2]-B[2],a,b) * \
-                        R(t,u,v,0,p,P[0]-C[0],P[1]-C[1],P[2]-C[2],RPC)
-     val *= 2*np.pi/p 
-     return val
+    '''
+    l1,m1,n1 = lmn1 
+    l2,m2,n2 = lmn2
+    p = a + b
+    P = gaussian_product_center(a,A,b,B) # Gaussian composite center
+    RPC = np.linalg.norm(P-C)
+
+    val = 0.0
+    for t in xrange(l1+l2+1):
+        for u in xrange(m1+m2+1):
+            for v in xrange(n1+n2+1):
+                val += E(l1,l2,t,A[0]-B[0],a,b) * \
+                       E(m1,m2,u,A[1]-B[1],a,b) * \
+                       E(n1,n2,v,A[2]-B[2],a,b) * \
+                       R(t,u,v,0,p,P[0]-C[0],P[1]-C[1],P[2]-C[2],RPC)
+    val *= 2*np.pi/p 
+    return val
 {% endhighlight %}
 
 And, just like all the other routines, we can wrap it up to treat
@@ -447,19 +465,19 @@ contracted Gaussians like so:
 {% highlight python %}
 def V(a,b,C):
     '''Evaluates overlap between two contracted Gaussians
-        Returns float.
-        Arguments:
-        a: contracted Gaussian 'a', BasisFunction object
-        b: contracted Gaussian 'b', BasisFunction object
-        C: center of nucleus
-     '''
-     v = 0.0
-     for ia, ca in enumerate(a.coefs):
-         for ib, cb in enumerate(b.coefs):
-             v += a.norm[ia]*b.norm[ib]*ca*cb*\
-                      nuclear_attraction(a.exps[ia],a.shell,a.origin,
-                      b.exps[ib],b.shell,b.origin,C)
-     return v
+       Returns float.
+       Arguments:
+       a: contracted Gaussian 'a', BasisFunction object
+       b: contracted Gaussian 'b', BasisFunction object
+       C: center of nucleus
+    '''
+    v = 0.0
+    for ia, ca in enumerate(a.coefs):
+        for ib, cb in enumerate(b.coefs):
+            v += a.norm[ia]*b.norm[ib]*ca*cb*\
+                     nuclear_attraction(a.exps[ia],a.shell,a.origin,
+                     b.exps[ib],b.shell,b.origin,C)
+    return v
 {% endhighlight %}
 
 **Important:** Note that this is the nuclear repulsion integral
@@ -489,43 +507,43 @@ equation in a similar form to the nuclear attraction integrals
 {% highlight python %}
 def electron_repulsion(a,lmn1,A,b,lmn2,B,c,lmn3,C,d,lmn4,D):
     ''' Evaluates kinetic energy integral between two Gaussians
-         Returns a float.
-         a,b,c,d:   orbital exponent on Gaussian 'a','b','c','d'
-         lmn1,lmn2
-         lmn3,lmn4: int tuple containing orbital angular momentum
-                    for Gaussian 'a','b','c','d', respectively
-         A,B,C,D:   list containing origin of Gaussian 'a','b','c','d'
-     '''
-     l1,m1,n1 = lmn1
-     l2,m2,n2 = lmn2
-     l3,m3,n3 = lmn3
-     l4,m4,n4 = lmn4
-     p = a+b # composite exponent for P (from Gaussians 'a' and 'b')
-     q = c+d # composite exponent for Q (from Gaussians 'c' and 'd')
-     alpha = p*q/(p+q)
-     P = gaussian_product_center(a,A,b,B) # A and B composite center
-     Q = gaussian_product_center(c,C,d,D) # C and D composite center
-     RPQ = np.linalg.norm(P-Q)
- 
-     val = 0.0
-     for t in xrange(l1+l2+1):
-         for u in xrange(m1+m2+1):
-             for v in xrange(n1+n2+1):
-                 for tau in xrange(l3+l4+1):
-                     for nu in xrange(m3+m4+1):
-                         for phi in xrange(n3+n4+1):
-                             val += E(l1,l2,t,A[0]-B[0],a,b) * \
-                                    E(m1,m2,u,A[1]-B[1],a,b) * \
-                                    E(n1,n2,v,A[2]-B[2],a,b) * \
-                                    E(l3,l4,tau,C[0]-D[0],c,d) * \
-                                    E(m3,m4,nu ,C[1]-D[1],c,d) * \
-                                    E(n3,n4,phi,C[2]-D[2],c,d) * \
-                                    np.power(-1,tau+nu+phi) * \
-                                    R(t+tau,u+nu,v+phi,0,\
-                                        alpha,P[0]-Q[0],P[1]-Q[1],P[2]-Q[2],RPQ)
- 
-     val *= 2*np.power(np.pi,2.5)/(p*q*np.sqrt(p+q))
-     return val
+        Returns a float.
+        a,b,c,d:   orbital exponent on Gaussian 'a','b','c','d'
+        lmn1,lmn2
+        lmn3,lmn4: int tuple containing orbital angular momentum
+                   for Gaussian 'a','b','c','d', respectively
+        A,B,C,D:   list containing origin of Gaussian 'a','b','c','d'
+    '''
+    l1,m1,n1 = lmn1
+    l2,m2,n2 = lmn2
+    l3,m3,n3 = lmn3
+    l4,m4,n4 = lmn4
+    p = a+b # composite exponent for P (from Gaussians 'a' and 'b')
+    q = c+d # composite exponent for Q (from Gaussians 'c' and 'd')
+    alpha = p*q/(p+q)
+    P = gaussian_product_center(a,A,b,B) # A and B composite center
+    Q = gaussian_product_center(c,C,d,D) # C and D composite center
+    RPQ = np.linalg.norm(P-Q)
+
+    val = 0.0
+    for t in xrange(l1+l2+1):
+        for u in xrange(m1+m2+1):
+            for v in xrange(n1+n2+1):
+                for tau in xrange(l3+l4+1):
+                    for nu in xrange(m3+m4+1):
+                        for phi in xrange(n3+n4+1):
+                            val += E(l1,l2,t,A[0]-B[0],a,b) * \
+                                   E(m1,m2,u,A[1]-B[1],a,b) * \
+                                   E(n1,n2,v,A[2]-B[2],a,b) * \
+                                   E(l3,l4,tau,C[0]-D[0],c,d) * \
+                                   E(m3,m4,nu ,C[1]-D[1],c,d) * \
+                                   E(n3,n4,phi,C[2]-D[2],c,d) * \
+                                   np.power(-1,tau+nu+phi) * \
+                                   R(t+tau,u+nu,v+phi,0,\
+                                       alpha,P[0]-Q[0],P[1]-Q[1],P[2]-Q[2],RPQ)
+
+    val *= 2*np.power(np.pi,2.5)/(p*q*np.sqrt(p+q))
+    return val
 {% endhighlight %}
 
 And, for completeness’ sake, we wrap the above to handle contracted
@@ -540,19 +558,19 @@ def ERI(a,b,c,d):
         b: contracted Gaussian 'b', BasisFunction object
         c: contracted Gaussian 'b', BasisFunction object
         d: contracted Gaussian 'b', BasisFunction object
-     '''
-     eri = 0.0
-     for ja, ca in enumerate(a.coefs):
-         for jb, cb in enumerate(b.coefs):
-             for jc, cc in enumerate(c.coefs):
-                 for jd, cd in enumerate(d.coefs):
-                     eri += a.norm[ja]*b.norm[jb]*c.norm[jc]*d.norm[jd]*\
-                              ca*cb*cc*cd*\
-                              electron_repulsion(a.exps[ja],a.shell,a.origin,\
-                                                 b.exps[jb],b.shell,b.origin,\
-                                                 c.exps[jc],c.shell,c.origin,\
-                                                 d.exps[jd],d.shell,d.origin)
-     return eri
+    '''
+    eri = 0.0
+    for ja, ca in enumerate(a.coefs):
+        for jb, cb in enumerate(b.coefs):
+            for jc, cc in enumerate(c.coefs):
+                for jd, cd in enumerate(d.coefs):
+                    eri += a.norm[ja]*b.norm[jb]*c.norm[jc]*d.norm[jd]*\
+                             ca*cb*cc*cd*\
+                             electron_repulsion(a.exps[ja],a.shell,a.origin,\
+                                                b.exps[jb],b.shell,b.origin,\
+                                                c.exps[jc],c.shell,c.origin,\
+                                                d.exps[jd],d.shell,d.origin)
+    return eri
 {% endhighlight %}
 
 And there you have it! All the integrals necessary for a Hartree-Fock
