@@ -152,9 +152,9 @@ def overlap(a,lmn1,A,b,lmn2,B):
     '''
     l1,m1,n1 = lmn1 # shell angular momentum on Gaussian 'a'
     l2,m2,n2 = lmn2 # shell angular momentum on Gaussian 'b'
-    S1 = E(l1,l2,0,A[0]-B[0],a,b,n[0],A[0]) # X
-    S2 = E(m1,m2,0,A[1]-B[1],a,b,n[1],A[1]) # Y
-    S3 = E(n1,n2,0,A[2]-B[2],a,b,n[2],A[2]) # Z
+    S1 = E(l1,l2,0,A[0]-B[0],a,b) # X
+    S2 = E(m1,m2,0,A[1]-B[1],a,b) # Y
+    S3 = E(n1,n2,0,A[2]-B[2],a,b) # Z
     return S1*S2*S3*np.power(np.pi/(a+b),1.5) 
 {% endhighlight %}
 
