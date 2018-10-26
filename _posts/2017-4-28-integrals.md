@@ -215,6 +215,7 @@ class BasisFunction(object):
             do not integrate to unity.
         '''
         l,m,n = self.shell
+        L = l+m+n
         # self.norm is a list of length equal to number primitives
         # normalize primitives first (PGBFs)
         self.norm = np.sqrt(np.power(2,2*(l+m+n)+1.5)*
@@ -228,10 +229,10 @@ class BasisFunction(object):
             fact2(2*l - 1)*fact2(2*m - 1)*fact2(2*n - 1)/np.power(2.0,L)
 
         N = 0.0
-        num_exps = len(self.num_exps)
+        num_exps = len(self.exps)
         for ia in range(num_exps):
             for ib in range(num_exps):
-                N += self.norm[ia]*self.norm[ib]*self.coefs[ia]*self.coefs[ib]/
+                N += self.norm[ia]*self.norm[ib]*self.coefs[ia]*self.coefs[ib]/\
                          np.power(self.exps[ia] + self.exps[ib],L+1.5)
 
         N *= prefactor
