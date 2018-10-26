@@ -260,7 +260,7 @@ Having finished the overlap integrals, we move on to the kinetic
 integrals. The kinetic energy integrals can be written in terms of
 overlap integrals
 
-$$T_{ab} = -\frac{1}{2}\left[D_{ij}^2 S_{kl} S_{mn} + S_{ij}D_{kl}^2 S_{mn} + S_{in} S_{kl} D_{mn}^2\right]$$
+$$T_{ab} = -\frac{1}{2}\left[D_{ij}^2 S_{kl} S_{mn} + S_{ij}D_{kl}^2 S_{mn} + S_{ij} S_{kl} D_{mn}^2\right]$$
 
 where 
 
