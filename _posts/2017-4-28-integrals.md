@@ -7,6 +7,8 @@ title: A (hopefully) gentle guide to the computer implementation of molecular in
 
 [PDF version]({{ site.baseurl }}/assets/integrals.pdf)
 
+**Update October 31, 2018:** Special thank you to [Joy Alamgir](https://www.linkedin.com/in/jalamgir/) for pointing out several corrections to this post (and PDF)!
+
 In quantum chemistry, we are often interested in evaluating integrals
 over Gaussian basis functions. Here I am going to take much of the
 theory for granted and talk about how one might actually implement the
