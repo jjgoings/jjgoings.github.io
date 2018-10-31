@@ -356,7 +356,7 @@ R^{n}_{0,0,0}   &= (-2p)^n F_n (p R_{PC}^2) \end{align}$$
 
 where $$F_n(T)$$ is the Boys function
 
-$$F_n(T) = \int_0^1 \hbox{exp}(-Tx^2)t^{2n}dt$$
+$$F_n(T) = \int_0^1 \hbox{exp}(-Tx^2)x^{2n}dx$$
 
 which is a special case of the Kummer confluent hypergeometric function, $$_1F_1(a,b,x)$$
 
