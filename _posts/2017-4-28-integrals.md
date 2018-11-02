@@ -451,9 +451,9 @@ def nuclear_attraction(a,lmn1,A,b,lmn2,B,C):
     RPC = np.linalg.norm(P-C)
 
     val = 0.0
-    for t in xrange(l1+l2+1):
-        for u in xrange(m1+m2+1):
-            for v in xrange(n1+n2+1):
+    for t in range(l1+l2+1):
+        for u in range(m1+m2+1):
+            for v in range(n1+n2+1):
                 val += E(l1,l2,t,A[0]-B[0],a,b) * \
                        E(m1,m2,u,A[1]-B[1],a,b) * \
                        E(n1,n2,v,A[2]-B[2],a,b) * \
@@ -529,12 +529,12 @@ def electron_repulsion(a,lmn1,A,b,lmn2,B,c,lmn3,C,d,lmn4,D):
     RPQ = np.linalg.norm(P-Q)
 
     val = 0.0
-    for t in xrange(l1+l2+1):
-        for u in xrange(m1+m2+1):
-            for v in xrange(n1+n2+1):
-                for tau in xrange(l3+l4+1):
-                    for nu in xrange(m3+m4+1):
-                        for phi in xrange(n3+n4+1):
+    for t in range(l1+l2+1):
+        for u in range(m1+m2+1):
+            for v in range(n1+n2+1):
+                for tau in range(l3+l4+1):
+                    for nu in range(m3+m4+1):
+                        for phi in range(n3+n4+1):
                             val += E(l1,l2,t,A[0]-B[0],a,b) * \
                                    E(m1,m2,u,A[1]-B[1],a,b) * \
                                    E(n1,n2,v,A[2]-B[2],a,b) * \
