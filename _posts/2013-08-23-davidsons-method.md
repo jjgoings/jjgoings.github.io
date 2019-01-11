@@ -37,41 +37,29 @@ Since we are choosing to find the first four eigenvalues, we need at least four 
 Finally we get to the meat of the main routine:
 
 {% highlight python %}  
-for m in xrange(k,mmax,k):  
-    if m <= k:  
-        for j in xrange(0,k):  
-            V[:,j] = t[:,j]/np.linalg.norm(t[:,j])  
-        theta_old = 1  
-    elif m > k:  
-        theta_old = theta[:eig]  
-    V,R = np.linalg.qr(V)  
-    T = np.dot(V[:,:(m+1)].T,np.dot(A,V[:,:(m+1)]))  
-    THETA,S = np.linalg.eig(T)  
-    idx = THETA.argsort()  
-    theta = THETA[idx]  
-    s = S[:,idx]  
-    for j in xrange(0,k):  
-        w = np.dot((A - theta[j]*I),np.dot(V[:,:(m+1)],s[:,j]))  
-        q = np.dot(np.linalg.inv(theta[j]*I - np.diag(np.diag(A))),w)  
-        V[:,(m+j+1)] = q  
-    norm = np.linalg.norm(theta[:eig] - theta_old)  
-    if norm < tol:  
-        break  
+for m in range(k,mmax,k):
+    if m <= k:
+        for j in range(0,k):
+            V[:,j] = t[:,j]/np.linalg.norm(t[:,j])
+        theta_old = 1 
+    elif m > k:
+        theta_old = theta[:eig]
+    V,R = np.linalg.qr(V)
+    T = np.dot(V[:,:(m+1)].T,np.dot(A,V[:,:(m+1)]))
+    THETA,S = np.linalg.eig(T)
+    idx = THETA.argsort()
+    theta = THETA[idx]
+    s = S[:,idx]
+    for j in range(0,k):
+        w = np.dot((A - theta[j]*I),np.dot(V[:,:(m+1)],s[:,j])) 
+        q = w/(theta[j]-A[j,j])
+        V[:,(m+j+1)] = q
+    norm = np.linalg.norm(theta[:eig] - theta_old)
+    if norm < tol:
+        break
 {% endhighlight %}
 
-**UPDATE (and hat tip to Matthew Goldey!): ** _Replace_
-
-{% highlight python %}  
-q = np.dot(np.linalg.inv(theta[j]*I - np.diag(np.diag(A))),w)  
-{% endhighlight %}
-
-_with_
-
-{% highlight python %}  
-q = w/(theta[j] - A[j,j])  
-{% endhighlight %}
-
-_for a major speed-up. Letting NumPy figure out how to invert a scalar is dumb. Thanks for pointing this out Matthew!_
+(*Thanks to Matthew Goldey for pointing out ways to spped up the code!*)
 
 We first check to see if this is our first iteration (e.g. m < k). If it is, we add our guess vectors to our set V, and set theta_old equal to one. Theta_one equal to one is arbitrary, and is used to ensure we don't "converge" on our first try (we can't, since we have to compare at least two iterations to determine convergence). If this isn't our first iteration, we set theta_old to our last iteration's eigenvalues.
 
@@ -91,10 +79,9 @@ You can see it works! (And the eigenvalues are really similar to the integer val
 I've attached the full routine at the end. With a sparse enough matrix, I can beat numpy by about a second. Of course, comparisons aren't really fair, since I make numpy compute all the eigenvalues. From what I know, this method has a lot of intricacies, and I am still learning many of them. If you know of any ways I can improve this code, let me know! Comments and messages are always appreciated.
 
 {% highlight python %}
-
 #!/bin/python
-
 from __future__ import division
+from __future__ import print_function
 import math
 import numpy as np
 import time
@@ -136,9 +123,9 @@ I = np.eye(n)			# identity matrix same dimen as A
 
 start_davidson = time.time()
 
-for m in xrange(k,mmax,k):
+for m in range(k,mmax,k):
     if m <= k:
-        for j in xrange(0,k):
+        for j in range(0,k):
             V[:,j] = t[:,j]/np.linalg.norm(t[:,j])
         theta_old = 1 
     elif m > k:
@@ -149,9 +136,8 @@ for m in xrange(k,mmax,k):
     idx = THETA.argsort()
     theta = THETA[idx]
     s = S[:,idx]
-    for j in xrange(0,k):
+    for j in range(0,k):
         w = np.dot((A - theta[j]*I),np.dot(V[:,:(m+1)],s[:,j])) 
-#        q = np.dot(np.linalg.inv(theta[j]*I - np.diag(np.diag(A))),w)
         q = w/(theta[j]-A[j,j])
         V[:,(m+j+1)] = q
     norm = np.linalg.norm(theta[:eig] - theta_old)
@@ -162,8 +148,8 @@ end_davidson = time.time()
 
 # End of block Davidson. Print results.
 
-print "davidson = ", theta[:eig],";",\
-    end_davidson - start_davidson, "seconds"
+print("davidson = ", theta[:eig],";",
+    end_davidson - start_davidson, "seconds")
 
 # Begin Numpy diagonalization of A
 
@@ -176,9 +162,8 @@ end_numpy = time.time()
 
 # End of Numpy diagonalization. Print results.
 
-print "numpy = ", E[:eig],";",\
-     end_numpy - start_numpy, "seconds" 
-
+print("numpy = ", E[:eig],";",
+     end_numpy - start_numpy, "seconds") 
 {% endhighlight %}
 
 
