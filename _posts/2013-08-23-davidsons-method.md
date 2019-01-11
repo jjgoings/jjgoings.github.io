@@ -59,7 +59,7 @@ for m in range(k,mmax,k):
         break
 {% endhighlight %}
 
-(*Thanks to Matthew Goldey for pointing out ways to spped up the code!*)
+(*Thanks to Matthew Goldey for pointing out ways to speed up the code!*)
 
 We first check to see if this is our first iteration (e.g. m < k). If it is, we add our guess vectors to our set V, and set theta_old equal to one. Theta_one equal to one is arbitrary, and is used to ensure we don't "converge" on our first try (we can't, since we have to compare at least two iterations to determine convergence). If this isn't our first iteration, we set theta_old to our last iteration's eigenvalues.
 
