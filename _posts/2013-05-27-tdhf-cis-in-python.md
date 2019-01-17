@@ -25,7 +25,7 @@ Where $$ \omega$$ is the spin of the electron, with coordinates 1 and 2. Note th
 
 $$ \langle pq\vert \vert rs \rangle =\langle pq\vert rs \rangle - \langle pq\vert sr \rangle $$
 
-or, showing the conversion more directly
+or, showing the conversion between physicists' and chemists' notation more directly
 
 $$ \langle pq\vert \vert rs \rangle = ( pr\vert qs ) - ( ps\vert qr ) $$
 
