@@ -23,7 +23,11 @@ $$ \langle pq\vert rs\rangle = (pr\vert qs)\int d\omega_1 d\omega_2 \sigma_p(\om
 
 Where $$ \omega$$ is the spin of the electron, with coordinates 1 and 2. Note that $$ (pq\vert rs) \neq \langle pq \vert  rs\rangle $$, this is because we will be moving from _chemists'_ notation to _physicists'_ notation, which dominates the literature. Since the CIS and TDHF equations need only double bar integrals, e.g.
 
-$$ \langle pq\vert \vert rs \rangle =\langle pq\vert rs \rangle - \langle ps\vert qr \rangle $$
+$$ \langle pq\vert \vert rs \rangle =\langle pq\vert rs \rangle - \langle pq\vert sr \rangle $$
+
+or, showing the conversion more directly
+
+$$ \langle pq\vert \vert rs \rangle = ( pr\vert qs ) - ( ps\vert qr ) $$
 
 We can also account for that in our transformation. In Python this gives:
 
@@ -69,6 +73,7 @@ Putting it altogether then (I hard coded the initial values for self-containment
 ####################################
 
 from __future__ import division
+from __future__ import print_function
 import math
 import numpy as np
 
@@ -165,14 +170,14 @@ for i in range(0,Nelec):
 
 # Solve CIS matrix equation
 ECIS,CCIS = np.linalg.eig(A)
-print "E(CIS) = ", np.amax(ECIS)
+print("E(CIS) = ", np.amax(ECIS))
 # Solve TDHF matrix equation
 M = np.bmat([[A,B],[-B,-A]])
 ETD,CTD = np.linalg.eig(M)
-print "E(TDHF) = ", abs(np.amax(ETD))
+print("E(TDHF) = ", abs(np.amax(ETD)))
 {% endhighlight %}
 
-Running the code we find our first excitation energy at the CIS level is E(CIS) = 0.911, and our first excitation at the TDHF level is E(TDHF) = 0.902, (all in Hartrees) in agreement with the literature values in the paper [here](http://link.aip.org/link/doi/10.1063/1.3020336 "Modeling the doubly excited state with time-dependent Hartree–Fock and density functional theories"). A couple of notes about the method. First, the TDHF method can be seen as an extension of the CIS approach. The $$ A$$ matrix in the TDHF working equations is just the CIS matrix. This also means that the TDHF matrix is _twice_ the dimension of the CIS matrix ( **four** times as large), which can get very costly. With a little bit of (linear) algebra, we can get the TDHF equations in the form:
+Running the code we find our first excitation energy at the CIS level is E(CIS) = 0.911, and our first excitation at the TDHF level is E(TDHF) = 0.902, (all in Hartrees) in agreement with the literature values in the paper [here](http://dx.doi.org/10.1063/1.3020336 "Modeling the doubly excited state with time-dependent Hartree–Fock and density functional theories"). A couple of notes about the method. First, the TDHF method can be seen as an extension of the CIS approach. The $$ A$$ matrix in the TDHF working equations is just the CIS matrix. This also means that the TDHF matrix is _twice_ the dimension of the CIS matrix ( **four** times as large), which can get very costly. With a little bit of (linear) algebra, we can get the TDHF equations in the form:
 
 $$ ({\mathbf A} + {\mathbf B}) ({\mathbf A} - {\mathbf B})({\mathbf X} - {\mathbf Y}) = \omega^2 ({\mathbf X} - {\mathbf Y})$$
 
