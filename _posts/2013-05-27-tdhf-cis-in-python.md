@@ -47,7 +47,7 @@ for p in range(1,dim*2+1):
 
 {% endhighlight %}
 
-Now, because Python begins its indexing at '0', and I began my indexing at '1', I had to make the index change at the end. From now on, the indexing starts at '0', so that $$ (11\vert 11) = (00\vert 00)$$ and so on. Now that we have our integrals, we can also spin adapt our orbital energies. This basically maps spatial orbital energy 1 (which contains two electrons) to spin orbital 1 and 2: odd numbers are spin up, even numbers are spin down. If the spatial orbitals are found in an array 'E', now moved to an array of double the dimension 'fs':
+Now, because Python begins its indexing at `0`, and I began my indexing at `1`, I had to make the index change at the end. From now on, the indexing starts at `0`, so that $$ (11\vert 11) = (00\vert 00)$$ and so on. Now that we have our integrals, we can also spin adapt our orbital energies. This basically maps spatial orbital energy 1 (which contains two electrons) to spin orbital 1 and 2: odd numbers are spin up, even numbers are spin down. If the spatial orbitals are found in an array `E`, now moved to an array of double the dimension `fs`:
 
 {% highlight python %} 
 # Spin basis fock matrix eigenvalues  
