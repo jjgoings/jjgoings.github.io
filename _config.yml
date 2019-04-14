@@ -30,3 +30,6 @@ pages_list:
 
 # Custom vars
 #version:             1.0.0
+
+plugins:
+  - jekyll-seo-tag
