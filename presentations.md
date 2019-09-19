@@ -5,6 +5,16 @@ title: Presentations
 
 Here you can find links to talks that I have given in the past, both formal and informal, starting from the most recent.
 
+**258th ACS National Meeting** \\
+*San Diego, CA* (2019) \\
+["Excited state QM/MM dynamics of a BLUF photoreceptor."](/assets/BLUF-TDA-Dynamics.pdf)
+
+
+**258th ACS National Meeting** \\
+*San Diego, CA* (2019) \\
+["Engineering a redox-active proton wire with proton-coupled electron transfer."](/assets/E4PT.pdf)
+
+
 **Group Meeting** \\
 *New Haven, CT* (2018) \\
 ["Impact of Protein Environment on Slr1694 BLUF Photoreceptor"](/assets/bluf-oct-2018.pdf)
