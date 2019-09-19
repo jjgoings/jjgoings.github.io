@@ -5,7 +5,7 @@ title: Publications
 **(25)** E. Odella$$^*$$, B. L. Wadsworth$$^*$$, S. J. Mora$$^*$$, **J. J. Goings**$$^*$$, M. T. Huynh, D. Gust, T. A. Moore, G. F. Moore, S. Hammes-Schiffer, A. L. Moore, ''[Proton-Coupled Electron Transfer Drives Long-Range Proton Translocation in Bioinspired Systems](https://doi.org/10.1021/jacs.9b06978),'' *J. Amer. Chem. Soc.*, 2019, 141, 14057--14061.<br/>
 $$^*$$Authors contributed equally to work
 <p align="center">
-  <img src="/assets/pub25toc.jpeg" height="300"/>
+  <img src="/assets/pub25toc.jpeg" height="400"/>
 </p>
 
 **(24)**  D. B. Williams-Young, A. Petrone, S. Sun, T. F. Stetina, P. Lestrange, C. E. Hoyer, D. R. Nascimento, L. Koulias, A. Wildman, J. Kasper, **J. J. Goings**, F. Ding, A. E. DePrince III, E. F. Valeev, X. Li, ''[The Chronus Quantum Software Package](https://doi.org/10.1002/wcms.1436),'' *WIREs Comput. Mol. Sci.*, 2019, e1436.
