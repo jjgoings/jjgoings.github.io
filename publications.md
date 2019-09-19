@@ -2,7 +2,7 @@
 layout: page
 title: Publications
 ---
-**(25)** E. Odella$$^*$$, B. L. Wadsworth$$^*$$, S. J. Mora$$^*$$, **J. J. Goings**$$^*$$, M. T. Huynh, D. Gust, T. A. Moore, G. F. Moore, S. Hammes-Schiffer, A. L. Moore, ''[Proton-Coupled Electron Transfer Drives Long-Range Proton Translocation in Bioinspired Systems](https://doi.org/10.1021/jacs.9b06978),'' *J. Amer. Chem. Soc.*, 2019, 141, 14057--14061.\\
+**(25)** E. Odella$$^*$$, B. L. Wadsworth$$^*$$, S. J. Mora$$^*$$, **J. J. Goings**$$^*$$, M. T. Huynh, D. Gust, T. A. Moore, G. F. Moore, S. Hammes-Schiffer, A. L. Moore, ''[Proton-Coupled Electron Transfer Drives Long-Range Proton Translocation in Bioinspired Systems](https://doi.org/10.1021/jacs.9b06978),'' *J. Amer. Chem. Soc.*, 2019, 141, 14057--14061.<br/>
 $$^*$$Authors contributed equally to work
 <p align="center">
   <img src="/assets/pub25toc.jpeg" height="300"/>
@@ -77,7 +77,7 @@ Phys.* 2016, 144 (23), 234102.
   <img src="/assets/pub11toc.gif" height="200"/>
 </p>
 
-**(10)** L. Nienhaus$$^*$$, **J. J. Goings**$$^*$$, D. Nguyen, S. Wieghold, J. Lyding, X. Li, M. Gruebele, ''[Imaging Excited Orbitals of Quantum Dots: Experiment and Electronic Structure Theory](http://dx.doi.org/10.1021/jacs.5b09272),'' *J. Amer. Chem. Soc.* 2015, 137 (46), 14743--14750.\\ 
+**(10)** L. Nienhaus$$^*$$, **J. J. Goings**$$^*$$, D. Nguyen, S. Wieghold, J. Lyding, X. Li, M. Gruebele, ''[Imaging Excited Orbitals of Quantum Dots: Experiment and Electronic Structure Theory](http://dx.doi.org/10.1021/jacs.5b09272),'' *J. Amer. Chem. Soc.* 2015, 137 (46), 14743--14750. <br/>
 $$^*$$Authors contributed equally to work
 
 <p align="center">
