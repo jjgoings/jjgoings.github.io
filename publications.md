@@ -12,8 +12,6 @@ $$^*$$Authors contributed equally to work
 
 **(23)**  E. R. Sayfutyarova, **J. J. Goings**, S. Hammes-Schiffer, ''[Electron-Coupled Double Proton Transfer in the Slr1694 BLUF Photoreceptor: A Multireference Electronic Structure Study](https://doi.org/10.1021/acs.jpcb.8b10973),'' *J. Phys. Chem. B*, 2019, 123, 439--447.
 
-**(22)**  E. Odella, S. J. Mora, B. L. Wadsworth, M. T. Huynh, **J. J. Goings**, P. A. Liddell, T. L. Groy, M. Gervaldo, L. E. Sereno, D. Gust, T. A. Moore, G. F. Moore, S. Hammes-Schiffer, A. L. Moore, ''[Controlling Proton-Coupled Electron Transfer in Bio-Inspired Artificial Photosynthetic Relays](https://doi.org/10.1021/jacs.8b09724),'' *J. Amer. Chem. Soc.*, 2018, 140 (45), 15450--15460.
-
 **(22)** **J. J. Goings**, C. R. Reinhardt,  S. Hammes-Schiffer, ''[Propensity for Proton Relay and Electrostatic Impact of Protein Reorganization in Slr1694 BLUF Photoreceptor](https://doi.org/10.1021/jacs.8b07456),'' *J. Amer. Chem. Soc.*, 2018, 140 (45), 15241--15251.
 <p align="center">
   <img src="/assets/pub21toc.gif" height="300"/>
