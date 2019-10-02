@@ -21,7 +21,7 @@ $$^*$$Authors contributed equally to work
 
 **(20)** D. Nguyen, **J. J. Goings**, H. A. Nguyen, J. Lyding, X. Li, M. Gruebele, ''[Orientation-dependent imaging of electronically excited quantum dots](https://doi.org/10.1063/1.5012784),'' *J. Chem. Phys.*, 2018, 148 (6), 064701.
 
-**Featured/cover article. Press release can be found [here](https://publishing.aip.org/publishing/journal-highlights/first-3-d-imaging-excited-quantum-dots).**
+**Featured/cover article. Press release can be found [here](https://publishing.aip.org/publications/latest-content/first-3-d-imaging-of-excited-quantum-dots/).**
 
 <p align="center">
   <img src="/assets/pub20toc.gif" height="400"/>
