@@ -5,7 +5,7 @@ title: A (hopefully) gentle guide to the computer implementation of molecular in
 
 **Note: You can find the following integral routines implemented in a working [Hartree-Fock code here](https://github.com/jjgoings/McMurchie-Davidson).**
 
-**Update October 31, 2018:** *Special thank you to [Joy Alamgir](https://www.linkedin.com/in/jalamgir/) for pointing out several corrections to this post (and PDF)!*
+*Special thank you to [Joy Alamgir](https://www.linkedin.com/in/jalamgir/) for pointing out several corrections to this post (and PDF)!*
 
 [PDF version]({{ site.baseurl }}/assets/integrals.pdf)
 
