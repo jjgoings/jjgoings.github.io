@@ -16,7 +16,7 @@ highlighter:         rouge
 
 # Add pages here to add to header
 pages_list:       
-  Resume: '/assets/resume.pdf'
+#  Resume: '/assets/resume.pdf'
   CV: '/assets/CV.pdf'
   Publications: '/publications'
 #  About: '/about'
