@@ -27,9 +27,9 @@ Now we take things a bit further. The next step in our regression "evolution" is
   <img width="600" src="{{ site.baseurl }}/assets/logistic.png" border="1">
 </p>
 
-This is known as a "[generalized linear model](https://en.wikipedia.org/wiki/Generalized_linear_model)." For our purpoises, the exact function you pass the linear model into doesn't matter so much. The important part is that we can make a generalized linear model by passing the linear model into a function. If you pass it into a sigmoid function, like we did above, you get a logistic regression model which can be useful for classification problems. 
+This is known as a "[generalized linear model](https://en.wikipedia.org/wiki/Generalized_linear_model)." For our purposes, the exact function you pass the linear model into doesn't matter so much. The important part is that we can make a generalized linear model by passing the linear model into a function. If you pass it into a sigmoid function, like we did above, you get a logistic regression model which can be useful for classification problems. 
 
-Like if I tell you the color and size of an animal, the logisiticmodel can predict whether the animal is either a flamingo or an elephant.
+Like if I tell you the color and size of an animal, the logistic model can predict whether the animal is either a flamingo or an elephant.
 
 So to recap, we started with a linear model, then by adding a function to the output, we got a generalized linear model. What's the next step?
 
