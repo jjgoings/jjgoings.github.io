@@ -6,7 +6,7 @@ title: What does Trump talk about when he talks about COVID-19?
 The code and details can be found on [GitHub here](https://github.com/jjgoings/trump-covid-briefings).
 
 <p align="center">
-<img alt="" src="{{ site.baseurl }}/assets/trump_wh_press_briefing.jpg" height="300" />
+<img alt="" src="{{ site.baseurl }}/assets/trump_wh_press_briefing.jpg" height="270" />
 </p>
 
 ## Table of Contents
@@ -189,9 +189,5 @@ The raw data was scraped from [https://www.whitehouse.gov/remarks/](https://www.
 
 The president's name is listed before he speaks, so once the page is downloaded locally, it is relatively easy to extract just Trump's statements. We treat a "statement" as any of Trump's spoken words separated by a newline. This gave a variety of statements, usually around 3 to 5 sentences long. If any statement was less than 16 words, we ignored it (these usually are statements like "Thank you John, next question", etc.) as these are not meaningful. If a statement was too long (longer than 140 words) we split them into smaller chunks. This foresight allows us to use the BERT transformer in future work, which in the default model cannot handle sentences with more than 512 word embeddings.
 
-Once the raw text was extracted to a `pandas` DataFrame, we applied standard text-cleaning routines to make all lowercase, remove stopwords, and add bigrams and trigrams (so '`mayor`', '`de`', '`blasio`' is not three separate words, but instead is treated as '`mayor_de_blasio`', which is much more informative!).
-
-After cleaning, the data is saved in `briefings/data/processed/trump_wh_remarks.csv` for further NLP analysis.
-
-<!---## Usage-->
+Once the raw text was extracted to a `pandas` DataFrame, we applied standard text-cleaning routines to make all lowercase, remove stopwords, and add bigrams and trigrams (so `mayor`, `de`, `blasio` is not three separate words, but instead is treated as `mayor_de_blasio`, which is much more informative!).
 
