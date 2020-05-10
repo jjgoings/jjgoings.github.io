@@ -2,7 +2,13 @@
 layout: page
 title: Publications
 ---
-**(26)** **J. J. Goings**, S. Hammes-Schiffer, ''[Early Photocycle of Slr1694 Blue-Light Using Flavin Photoreceptor Unraveled through Adiabatic Excited-State Quantum Mechanical/Molecular Mechanical Dynamics](https://doi.org/10.1021/jacs.9b11196),'' *J. Amer. Chem. Soc.*, 2019, *Just accepted*.
+**(27)** E. Odella$$^*$$, S. J. Mora$$^*$$, B. L. Wadsworth$$^*$$, **J. J. Goings**$$^*$$, M. A. Gervaldo, L. E. Sereno, T. L Groy, D. Gust, T. A. Moore, G. F. Moore, S. Hammes-Schiffer, A. L. Moore, ''[Proton-coupled electron transfer across benzimidazole bridges in bioinspired proton wires](https://doi.org/10.1039/C9SC06010C),'' *Chem. Sci.*, 2020, 11, 3820--3828.<br/>
+$$^*$$Authors contributed equally to work
+
+**(26)** **J. J. Goings**, S. Hammes-Schiffer, ''[Early Photocycle of Slr1694 Blue-Light Using Flavin Photoreceptor Unraveled through Adiabatic Excited-State Quantum Mechanical/Molecular Mechanical Dynamics](https://doi.org/10.1021/jacs.9b11196),'' *J. Amer. Chem. Soc.*, 2019, 141, 51, 20470--20479.
+<p align="center">
+  <img src="/assets/bluf-pc.jpeg" height="300"/>
+</p>
 
 **(25)** E. Odella$$^*$$, B. L. Wadsworth$$^*$$, S. J. Mora$$^*$$, **J. J. Goings**$$^*$$, M. T. Huynh, D. Gust, T. A. Moore, G. F. Moore, S. Hammes-Schiffer, A. L. Moore, ''[Proton-Coupled Electron Transfer Drives Long-Range Proton Translocation in Bioinspired Systems](https://doi.org/10.1021/jacs.9b06978),'' *J. Amer. Chem. Soc.*, 2019, 141, 14057--14061.<br/>
 $$^*$$Authors contributed equally to work

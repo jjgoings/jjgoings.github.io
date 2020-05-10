@@ -11,7 +11,7 @@ Here are a couple of side projects I've been working on for fun.
 <img alt="" src="{{ site.baseurl }}/assets/NMF-topics.jpeg" height="300" border="1"/>
 </p>
 
-Like many Americans, I have been following the news closely during this pandemic. I got interested in [how Trump was talking about the coronavirus](https://github.com/jjgoings/trump-covid-briefings) and thought it would be fun to use natural language processing (NLP) techniques to idenify what topics Trump talks about and how his senitiment is connected to world events. 
+Like many people, I have been following the news closely during the coronavirus pandemic. I got interested in [how Trump was talking about the coronavirus](https://github.com/jjgoings/trump-covid-briefings) and thought it would be fun to use natural language processing (NLP) techniques to identify what topics Trump talks about and how his sentiment is connected to world events. 
 
 ---
 

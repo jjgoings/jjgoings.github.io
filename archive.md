@@ -1,9 +1,8 @@
 ---
 layout: page
-title: Archive
+title: Blog 
 ---
 
-## Blog Posts
 
 {% for post in site.posts %}
   * [ {{ post.title }} ]({{ post.url }})
