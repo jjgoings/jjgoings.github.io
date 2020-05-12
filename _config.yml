@@ -10,7 +10,7 @@ title:               Joshua Goings
 url:                 http://joshuagoings.com
 baseurl:             ''
 paginate:            5
-paginate_path:       "page:num"
+paginate_path:       "/blog/page:num"
 markdown:            kramdown 
 kramdown:
   parse_block_html: true
@@ -18,10 +18,11 @@ highlighter:         rouge
 
 # Add pages here to add to header
 pages_list:       
-  Resume: '/assets/resume.pdf'
-  CV: '/assets/CV.pdf'
-  Publications: '/publications'
+  Blog: '/blog'
+#  Resume: '/assets/resume.pdf'
+#  CV: '/assets/CV.pdf'
   Projects: '/projects'
+  Publications: '/publications'
 #  About: '/about'
 #  Archive: '/archive'
 
