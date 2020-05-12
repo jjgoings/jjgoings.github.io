@@ -36,7 +36,7 @@ tbody tr:nth-child(odd) th {
 -->
 
 <p align="center">
-   <img height="400" src="{{ site.baseurl }}/assets/rainier.jpg">
+   <img height="300" src="{{ site.baseurl }}/assets/rainier.jpg">
 </p>
 
 
