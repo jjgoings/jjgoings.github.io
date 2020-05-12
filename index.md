@@ -47,7 +47,7 @@ tbody tr:nth-child(odd) th {
 
 <p>Currently, I'm a postdoc at Yale, doing research in the <a href="http://hammes-schiffer-group.org/">Hammes-Schiffer lab</a> working at the interface of computational chemistry and biology. Previously, I was an NSF Graduate Research Fellow at the <a href="http://uwligroup.org/">University of Washington</a> (theoretical and computational chemistry), and got my Bachelor's from Seattle Pacific University.</p> 
 
-<p>I hope you find something useful here -- feel free to [email]({{ site.data.social-media.email.href }}) me any time!</p>
+<p>I hope you find something useful here -- feel free to [email]({{ site.data.social-media.email.href }}{{ site.data.social-media.email.id }}) me any time!</p>
 
 <center>
 <a href="{{ site.data.social-media.email.href }}{{ site.data.social-media.email.id }}" title="{{ site.data.social-media.email.title }}"><i class="fa {{ site.data.social-media.email.fa-icon }} fa-3x"></i></a>
