@@ -1,0 +1,24 @@
+email:
+  id: 'jjgoings@gmail.com'
+  href: 'mailto:'
+  title: 'Email'
+  fa-icon: 'fa-envelope-square'
+
+github:
+  id: 'jjgoings'
+  href: 'https://github.com/'
+  title: 'GitHub'
+  fa-icon: 'fa-github-square'
+
+linkedin:
+  id: 'joshuagoings'
+  href: 'https://linkedin.com/in/'
+  title: 'LinkedIn'
+  fa-icon: 'fa-linkedin-square'
+
+stackexchange:
+  id: '3645786/jjgoings'
+  href: 'https://stackexchange.com/users/'
+  title: 'StackExchange'
+  fa-icon: 'fa-stack-exchange'
+

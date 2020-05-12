@@ -30,7 +30,6 @@
     <a class="sidebar-nav-item{% if page.url == site.baseurl %} active{% endif %}" href="{{ site.baseurl }}/presentations">Presentations</a>
     <a class="sidebar-nav-item{% if page.url == site.baseurl %} active{% endif %}" href="{{ site.baseurl }}/archive">Archive</a>
 
-
     {% comment %}
       The code below dynamically generates a sidebar nav of pages with
       `layout: page` in the front-matter. See readme for usage.
@@ -49,7 +48,10 @@
 
   <div class="sidebar-item">
     <p>
-      &copy; Joshua Goings {{ site.time | date: '%Y' }}. All rights reserved.
+    {% include social-media-links.html %}
+    </p>
+    <p>
+      &copy; {{ site.time | date: '%Y' }} Joshua Goings. All rights reserved.
     </p>
   </div>
 </div>
