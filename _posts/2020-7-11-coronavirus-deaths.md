@@ -14,7 +14,7 @@ Basically it is the junk drawer of deaths, but remains fairly constant from year
 Here's a plot of Unclassified deaths in 2020 in the USA, compared with the previous 5 years as a baseline. I've also plotted COVID-19 deaths, where COVID-19 has been marked as the underlying cause. 
  
 <p align="center">
-<img alt="" src="/assets/United_States_2020.png" width="600" />
+<img alt="" src="/assets/United_States_2020.png" width="600" border="1"/>
 </p>
 
 You can see the dark blue line continuing to increase, even as the total COVID-19 deaths fall. The unclassified deaths are increasing several times the baseline.
@@ -22,15 +22,15 @@ You can see the dark blue line continuing to increase, even as the total COVID-1
 Of course, the USA is big, so it helps to compare with some individual states. Here's New York, New Jersey, and Massachusetts:
  
 <p align="center">
-<img alt="" src="/assets/New_York_2020.png" width="600" />
+<img alt="" src="/assets/New_York_2020.png" width="600" border="1" />
 </p>
  
 <p align="center">
-<img alt="" src="/assets/New_Jersey_2020.png" width="600" />
+<img alt="" src="/assets/New_Jersey_2020.png" width="600" border="1"/>
 </p>
  
 <p align="center">
-<img alt="" src="/assets/Massachusetts_2020.png" width="600" />
+<img alt="" src="/assets/Massachusetts_2020.png" width="600" border="1"/>
 </p>
 
 These Northeast states saw/reported huge COVID-19 deaths in April. The unclassified deaths are increasing for all, but a small proportion relative to those coded as due to COVID-19. But the unclassified deaths remain several standard deviations away from the baseline. It's hard to see above, but the baseline is shaded light blue by plus-or-minus one standard deviation from the mean. (It's easier to see below.)
@@ -38,15 +38,15 @@ These Northeast states saw/reported huge COVID-19 deaths in April. The unclassif
 Compare that to some of the southern states that saw a huge resurgence in COVID-19 cases in May and June, like Florida, Arizona, and Texas:
  
 <p align="center">
-<img alt="" src="/assets/Florida_2020.png" width="600" />
+<img alt="" src="/assets/Florida_2020.png" width="600" border="1"/>
 </p>
  
 <p align="center">
-<img alt="" src="/assets/Arizona_2020.png" width="600" />
+<img alt="" src="/assets/Arizona_2020.png" width="600" border="1"/>
 </p>
  
 <p align="center">
-<img alt="" src="/assets/Texas_2020.png" width="600" />
+<img alt="" src="/assets/Texas_2020.png" width="600" border="1"/>
 </p>
 
 These states have reported far fewer deaths in total than the Northeastern states. But look at the relative numbers. In Florida and Texas, the unclassified deaths have now outpaced the COVID-19 deaths. In Arizona, unclassified and COVID-19 deaths are neck-and-neck. These states have an equal-to or larger proportion of unclassified deaths compared to COVID-19. In all cases (just like in the Northeast) the unclassified deaths are several (> 5) standard deviations (the light blue shading) away from the 5-year baseline. These death rates never fell; at best they plateaued. 
