@@ -1,7 +1,23 @@
 ---                                                                             
 layout: post
-title: COVID-19 deaths are probably vastly underreported 
+title: [some] COVID-19 deaths are ~~probably vastly underreported~~ [pending] 
 ---
+
+**Update 07/18/2020: "Unclassified" includes "pending"** 
+
+The mystery of the excess "unclassified" deaths has been resolved, thanks to [here](https://covid19science.blogspot.com/2020/06/the-cheating-is-getting-worse.html) and [here](https://thezvi.wordpress.com/2020/07/11/analysis-of-mortality-data-post-1/). 
+
+Long story short, **the deaths in R00-R99 include "pending" cause of death.** So the changes in the R00-R99 deaths are not due to fraudulent data, but rather a very, very slow reporting process. States are required to report timely deaths, but because analyzing the cause of death can take months (yes, months) those [cases that are pending are put in the "unclassified" category](https://cdn.ymaws.com/www.cste.org/resource/resmgr/Injury/Analysis_of_data_on_drug_poi.pdf). This includes potentially sensitive and complicated deaths like drug overdose. Over time these extra unclassified deaths get resolved. 
+
+Here is a chart [from the CDC](https://www.cdc.gov/nchs/data/vsrr/report001.pdf) (Figure 3), which shows how the percent of "unclassified deaths" at a certain time decreases over a typical (read: non-COVID-19) year as the deaths get re-classified and put into appropriate categories. 
+ 
+<p align="center">
+<img alt="" src="/assets/tery_pending.png" width="600" border="1"/>
+</p>
+
+For the sake of intellectual honesty, I'm leaving the post unedited to record my thought process. But I'm glad it appears that the "unclassified deaths" are not due to fraudulent COVID-19 reporting. (Though the pace of death classification can be strikingly slow!) 
+
+--- 
 
 The CDC gives the [number of deaths reported and coded for a given week](https://data.cdc.gov/NCHS/Weekly-Counts-of-Deaths-by-State-and-Select-Causes/muzy-jte6), giving insight into how many people died of what cause. 
 
