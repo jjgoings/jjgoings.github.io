@@ -1,6 +1,6 @@
 ---                                                                             
 layout: post
-title: [some] COVID-19 deaths are ~~probably vastly underreported~~ [pending] 
+title: (Some) COVID-19 deaths are probably <strike>vastly underreported</strike> pending 
 ---
 
 **Update 07/18/2020: "Unclassified" includes "pending"** 
@@ -12,7 +12,7 @@ Long story short, **the deaths in R00-R99 include "pending" cause of death.** So
 Here is a chart [from the CDC](https://www.cdc.gov/nchs/data/vsrr/report001.pdf) (Figure 3), which shows how the percent of "unclassified deaths" at a certain time decreases over a typical (read: non-COVID-19) year as the deaths get re-classified and put into appropriate categories. 
  
 <p align="center">
-<img alt="" src="/assets/tery_pending.png" width="600" border="1"/>
+<img alt="" src="/assets/mystery_pending.png" width="600" border="1"/>
 </p>
 
 For the sake of intellectual honesty, I'm leaving the post unedited to record my thought process. But I'm glad it appears that the "unclassified deaths" are not due to fraudulent COVID-19 reporting. (Though the pace of death classification can be strikingly slow!) 
