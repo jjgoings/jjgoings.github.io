@@ -44,16 +44,16 @@ for m in range(k,mmax,k):
         theta_old = 1 
     elif m > k:
         theta_old = theta[:eig]
-    V,R = np.linalg.qr(V)
-    T = np.dot(V[:,:(m+1)].T,np.dot(A,V[:,:(m+1)]))
+    V[:,:m],R = np.linalg.qr(V[:,:m])
+    T = np.dot(V[:,:m].T,np.dot(A,V[:,:m]))
     THETA,S = np.linalg.eig(T)
     idx = THETA.argsort()
     theta = THETA[idx]
     s = S[:,idx]
     for j in range(0,k):
-        w = np.dot((A - theta[j]*I),np.dot(V[:,:(m+1)],s[:,j])) 
+        w = np.dot((A - theta[j]*I),np.dot(V[:,:m],s[:,j])) 
         q = w/(theta[j]-A[j,j])
-        V[:,(m+j+1)] = q
+        V[:,(m+j)] = q
     norm = np.linalg.norm(theta[:eig] - theta_old)
     if norm < tol:
         break
@@ -130,16 +130,16 @@ for m in range(k,mmax,k):
         theta_old = 1 
     elif m > k:
         theta_old = theta[:eig]
-    V,R = np.linalg.qr(V)
-    T = np.dot(V[:,:(m+1)].T,np.dot(A,V[:,:(m+1)]))
+    V[:,:m],R = np.linalg.qr(V[:,:m])
+    T = np.dot(V[:,:m].T,np.dot(A,V[:,:m]))
     THETA,S = np.linalg.eig(T)
     idx = THETA.argsort()
     theta = THETA[idx]
     s = S[:,idx]
     for j in range(0,k):
-        w = np.dot((A - theta[j]*I),np.dot(V[:,:(m+1)],s[:,j])) 
+        w = np.dot((A - theta[j]*I),np.dot(V[:,:m],s[:,j])) 
         q = w/(theta[j]-A[j,j])
-        V[:,(m+j+1)] = q
+        V[:,(m+j)] = q
     norm = np.linalg.norm(theta[:eig] - theta_old)
     if norm < tol:
         break
