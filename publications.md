@@ -2,6 +2,15 @@
 layout: page
 title: Publications
 ---
+**(30)** W. D. Guerra, E. Odella, M. Secor, **J. J. Goings**, M. N. Urrutia, B. L. Wadsworth, M. Gervaldo, L. E. Sereno, T. A. Moore, G. F. Moore, S. Hammes-Schiffer, A. L. Moore, ''[Role of Intact Hydrogen-Bond Networks in Multiproton-Coupled Electron Transfer](https://doi.org/10.1021/jacs.0c10474),'' *J. Amer. Chem. Soc.*, 2020, 142, 52, 21842--21851.
+
+**(29)** **J. J. Goings**, P. Li, Q. Zhu, S. Hammes-Schiffer, ''[Formation of an unusual glutamine tautomer in a blue light using flavin photocycle characterizes the light-adapted state](https://doi.org/10.1073/pnas.2016719117),'' *PNAS*, 2020, 117, 43, 26626--26632.
+
+**(28)** **J. J. Goings**, S. Hammes-Schiffer, ''[Nonequilibrium Dynamics of Proton-Coupled Electron Transfer in Proton Wires: Concerted but Asynchronous Mechanisms.](https://doi.org/10.1021/acscentsci.0c00756),'' *ACS Cent. Sci.*, 2020, 6, 9, 1594--1601.
+<p align="center">
+  <img src="/assets/pub28toc.jpeg" height="300"/>
+</p>
+
 **(27)** E. Odella$$^*$$, S. J. Mora$$^*$$, B. L. Wadsworth$$^*$$, **J. J. Goings**$$^*$$, M. A. Gervaldo, L. E. Sereno, T. L Groy, D. Gust, T. A. Moore, G. F. Moore, S. Hammes-Schiffer, A. L. Moore, ''[Proton-coupled electron transfer across benzimidazole bridges in bioinspired proton wires](https://doi.org/10.1039/C9SC06010C),'' *Chem. Sci.*, 2020, 11, 3820--3828.<br/>
 $$^*$$Authors contributed equally to work
 
