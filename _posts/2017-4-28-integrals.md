@@ -195,6 +195,8 @@ the relevant data for the basis function, including exponents,
 normalization, etc. A `BasisFunction` class looks like
 
 {% highlight python %}
+from scipy.special import factorial2 as fact2
+
 class BasisFunction(object):
     ''' A class that contains all our basis function data
         Attributes:
