@@ -7,6 +7,8 @@ Below you can find several notes and derivations for various topics related to e
 
 In no particular order:
 
+[Maximum Entropy Probability Distributions](/assets/Maximum_Entropy_Distributions.pdf)
+
 [The Magnus Expansion](/assets/magnus.pdf)
 
 [Guide to Molecular Integral Evaluation](/assets/integrals.pdf)

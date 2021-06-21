@@ -5,6 +5,16 @@ title: Projects
 
 Here are a couple of side projects I've been working on for fun.
 
+### [McMurchie-Davidson](https://github.com/jjgoings/McMurchie-Davidson) 
+
+<p align="center">
+<img alt="" src="{{ site.baseurl }}/assets/nonlinear.jpeg" height="300" border="1"/>
+</p>
+
+It was a dream in graduate school to build a quantum chemistry program from scratch. [This was the result](https://github.com/jjgoings/McMurchie-Davidson), using the McMurchie-Davidson algorithm to compute the (very expensive) electronic integrals. With no experimental input, it allows you to solve for the wave function of any molecule. Among other things, you can use it to simulate how molecules respond to light in real-time. I also dabbled in learning Cython to optimize the algorithm in performance-critical routines, without sacrificing code readability.
+
+---
+
 ### [Natural language processing (NLP) of Trump's COVID-19 briefings](https://github.com/jjgoings/trump-covid-briefings)
 
 <p align="center">
@@ -22,16 +32,6 @@ Like many people, I have been following the news closely during the coronavirus 
 </p>
 
 New Haven isn't exactly [known for being the safest city](https://www.cbsnews.com/pictures/americas-10-most-dangerous-cities/7/) in America, and I wanted to learn more. But the data didn't exist in a nice form. So I made an interactive map of recent crime that I scraped from the [New Haven Police Department](https://www.newhavenct.gov/gov/depts/nhpd/compstat_reports.htm). It was fun to learn how to scrape data from PDFs, clean it with OpenRefine, geo-tag the results, and deploy as an interactive webapp.
-
----
-
-### [McMurchie-Davidson](https://github.com/jjgoings/McMurchie-Davidson) 
-
-<p align="center">
-<img alt="" src="{{ site.baseurl }}/assets/nonlinear.jpeg" height="300" border="1"/>
-</p>
-
-It was a dream in graduate school to build a quantum chemistry program from scratch. [This was the result](https://github.com/jjgoings/McMurchie-Davidson), using the McMurchie-Davidson algorithm to compute the (very expensive) electronic integrals. With no experimental input, it allows you to solve for the wave function of any molecule. Among other things, you can use it to simulate how molecules respond to light in real-time. I also dabbled in learning Cython to optimize the algorithm in performance-critical routines, without sacrificing code readability.
 
 ---
 
