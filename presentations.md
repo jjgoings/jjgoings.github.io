@@ -5,6 +5,14 @@ title: Presentations
 
 Here you can find links to talks that I have given in the past, both formal and informal, starting from the most recent.
 
+**Theory Group Meeting** \\
+*Seattle, WA* (2021) \\
+["Reinforcement learning configuration interaction."](/assets/RLCI.pdf)
+
+**Guest Lecture, UW Data Science And Materials Informatics** \\
+*Seattle, WA* (2020) \\
+["Interpretable machine learning for conceptual chemistry.](/assets/interpretable_machine_learning_for_conceptual_chemistry.pdf)
+
 **258th ACS National Meeting** \\
 *San Diego, CA* (2019) \\
 ["Excited state QM/MM dynamics of a BLUF photoreceptor."](/assets/BLUF-TDA-Dynamics.pdf)
@@ -28,7 +36,7 @@ Here you can find links to talks that I have given in the past, both formal and 
 *San Francisco, CA* (2017) \\
 ["Can quantized vibrational effects be obtained from Ehrenfest mixed quantum classical dynamics?"](/assets/ACS-253-ehrenfest.pdf)
 
-**Guest Lecture for SPU's Intro to Research Methods Course** \\
+**Guest Lecture, SPU Intro to Research Methods Course** \\
 *Seattle, WA* (2016) \\
 ["Molecules and Light (or, Why you see what you see)"](/assets/SPU-2016.pdf)
 
