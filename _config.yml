@@ -37,3 +37,4 @@ pages_list:
 plugins:
   - jekyll-seo-tag
   - jekyll-paginate
+  - jemoji

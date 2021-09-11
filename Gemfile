@@ -6,3 +6,4 @@ gem 'github-pages'
 gem 'jekyll-paginate'
 gem "kramdown", ">= 2.3.1"
 gem "rexml", ">= 3.2.5"
+gem 'jemoji'
