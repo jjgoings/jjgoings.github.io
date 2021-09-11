@@ -4,7 +4,7 @@ title: Publications
 ---
 **(31)** **J. J. Goings**, H. Hu, C. Yang, X. Li. ''[Reinforcement Learning Configuration Interaction](https://doi.org/10.1021/acs.jctc.1c00010),'' *J. Chem. Theory. Comput.*, 2021, *Article ASAP*. 
 <p align="center">
-  <img src="/assets/pub31toc.jpeg" height="300"/>
+  <img src="/assets/pub31toc.png" height="300"/>
 </p>
 
 **(30)** W. D. Guerra, E. Odella, M. Secor, **J. J. Goings**, M. N. Urrutia, B. L. Wadsworth, M. Gervaldo, L. E. Sereno, T. A. Moore, G. F. Moore, S. Hammes-Schiffer, A. L. Moore, ''[Role of Intact Hydrogen-Bond Networks in Multiproton-Coupled Electron Transfer](https://doi.org/10.1021/jacs.0c10474),'' *J. Amer. Chem. Soc.*, 2020, 142, 52, 21842--21851.
