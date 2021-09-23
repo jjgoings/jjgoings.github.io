@@ -2,7 +2,7 @@
 layout: page
 title: Publications
 ---
-**(31)** **J. J. Goings**, H. Hu, C. Yang, X. Li. ''[Reinforcement Learning Configuration Interaction](https://doi.org/10.1021/acs.jctc.1c00010),'' *J. Chem. Theory. Comput.*, 2021, *Article ASAP*. 
+**(31)** **J. J. Goings**, H. Hu, C. Yang, X. Li. ''[Reinforcement Learning Configuration Interaction](https://doi.org/10.1021/acs.jctc.1c00010),'' *J. Chem. Theory. Comput.*, 2021, 17, 9, 5482--5491. 
 <p align="center">
   <img src="/assets/pub31toc.png" height="300"/>
 </p>
