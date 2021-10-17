@@ -2,7 +2,10 @@
 layout: page
 title: Publications
 ---
-**(31)** **J. J. Goings**, H. Hu, C. Yang, X. Li. ''[Reinforcement Learning Configuration Interaction](https://doi.org/10.1021/acs.jctc.1c00010),'' *J. Chem. Theory. Comput.*, 2021, 17, 9, 5482--5491. 
+**(32)** A. Lachowicz, E. H. Perez, N. S. Shuman, S. Ard, A. A. Viggiano, P. B. Armentrout, **J. J. Goings**, P. Sharma, X. Li, M. A. Johnson, ''[Determination of the SmO+ bond energy by threshold photodissociation of the cryogenically cooled ion](https://doi.org/10.1063/5.0068734),'' *J. Chem. Phys.*, 2021, *In press*. 
+
+
+**(31)** **J. J. Goings**, H. Hu, C. Yang, X. Li, ''[Reinforcement Learning Configuration Interaction](https://doi.org/10.1021/acs.jctc.1c00010),'' *J. Chem. Theory Comput.*, 2021, 17, 9, 5482--5491. 
 <p align="center">
   <img src="/assets/pub31toc.png" height="300"/>
 </p>
