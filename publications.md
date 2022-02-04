@@ -2,7 +2,14 @@
 layout: page
 title: Publications
 ---
-**(32)** A. Lachowicz, E. H. Perez, N. S. Shuman, S. Ard, A. A. Viggiano, P. B. Armentrout, **J. J. Goings**, P. Sharma, X. Li, M. A. Johnson, ''[Determination of the SmO+ bond energy by threshold photodissociation of the cryogenically cooled ion](https://doi.org/10.1063/5.0068734),'' *J. Chem. Phys.*, 2021, *In press*. 
+**(34)** **J. J. Goings**, A. White, J. Lee, C. S. Tautermann, M. Degroote, C. Gidney, T. Shiozaki, R.Babbush, N. C. Rubin, ''[Reliably assessing the electronic structure of cytochrome P450 on today's classical computers and tomorrow's quantum computers](https://arxiv.org/abs/2202.01244),'' *arXiv preprint*,  arXiv:2202.01244. 
+<p align="center">
+  <img src="/assets/pub34toc.png" width="600"/>
+</p>
+
+**(33)** T. E. O'Brien, M. Streif, N. C. Rubin, R. Santagati, Y. Su, W. J. Huggins, **J. J. Goings**, N. Moll, E. Kyoseva, M. Degroote, C. S. Tautermann, J. Lee, D. W. Berry, N. Wiebe, R Babbush, ''[Efficient quantum computation of molecular forces and other energy gradients](https://arxiv.org/abs/2111.12437),'' *arXiv preprint*,  arXiv:2111.12437. 
+
+**(32)** A. Lachowicz, E. H. Perez, N. S. Shuman, S. Ard, A. A. Viggiano, P. B. Armentrout, **J. J. Goings**, P. Sharma, X. Li, M. A. Johnson, ''[Determination of the SmO+ bond energy by threshold photodissociation of the cryogenically cooled ion](https://doi.org/10.1063/5.0068734),'' *J. Chem. Phys.*, 2021, 155, 174303. 
 
 
 **(31)** **J. J. Goings**, H. Hu, C. Yang, X. Li, ''[Reinforcement Learning Configuration Interaction](https://doi.org/10.1021/acs.jctc.1c00010),'' *J. Chem. Theory Comput.*, 2021, 17, 9, 5482--5491. 
