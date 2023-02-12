@@ -2,7 +2,7 @@
 layout: page
 title: Publications
 ---
-**(36)** L. Zhao, **J. J. Goings***, K. Wright, J. Nguyen, J. Kim, S. Johri, K. Shin, W. Kyoung, J. I. Fuks, J-K. K. Rhee, Y. M. Rhee, ''[Orbital-optimized pair-correlated electron simulations on trapped-ion quantum computers](https://arxiv.org/abs/2212.02482),'' *arXiv preprint*, 2022, arXiv:2212.02482. 
+**(36)** L. Zhao, **J. J. Goings**, K. Wright, J. Nguyen, J. Kim, S. Johri, K. Shin, W. Kyoung, J. I. Fuks, J-K. K. Rhee, Y. M. Rhee, ''[Orbital-optimized pair-correlated electron simulations on trapped-ion quantum computers](https://arxiv.org/abs/2212.02482),'' *arXiv preprint*, 2022, arXiv:2212.02482. 
 
 **(35)** A. W. Mills, **J. J. Goings**, D. Beck, C. Yang, X. Li, ''[Exploring Potential Energy Surfaces Using Reinforcement Machine Learning](https://doi.org/10.1021/acs.jcim.2c00373),'' *J. Chem. Inf. Model.*, 2022, 62, 13, 3169--3179. 
 
