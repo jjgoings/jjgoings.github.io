@@ -16,6 +16,11 @@ kramdown:
   parse_block_html: true
 highlighter:         rouge
 
+output:
+  html_document:
+    includes: 
+      in_header: ga_script.html
+
 # Add pages here to add to header
 pages_list:       
   Blog: '/blog'
