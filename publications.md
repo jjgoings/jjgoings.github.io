@@ -2,12 +2,16 @@
 layout: page
 title: Publications
 ---
-**(34)** **J. J. Goings**, A. White, J. Lee, C. S. Tautermann, M. Degroote, C. Gidney, T. Shiozaki, R.Babbush, N. C. Rubin, ''[Reliably assessing the electronic structure of cytochrome P450 on today's classical computers and tomorrow's quantum computers](https://arxiv.org/abs/2202.01244),'' *arXiv preprint*,  arXiv:2202.01244. 
+**(36)** L. Zhao, **J. J. Goings***, K. Wright, J. Nguyen, J. Kim, S. Johri, K. Shin, W. Kyoung, J. I. Fuks, J-K. K. Rhee, Y. M. Rhee, ''[Orbital-optimized pair-correlated electron simulations on trapped-ion quantum computers](https://arxiv.org/abs/2212.02482),'' *arXiv preprint*, 2022, arXiv:2212.02482. 
+
+**(35)** A. W. Mills, **J. J. Goings**, D. Beck, C. Yang, X. Li, ''[Exploring Potential Energy Surfaces Using Reinforcement Machine Learning](https://doi.org/10.1021/acs.jcim.2c00373),'' *J. Chem. Inf. Model.*, 2022, 62, 13, 3169--3179. 
+
+**(34)** **J. J. Goings**, A. White, J. Lee, C. S. Tautermann, M. Degroote, C. Gidney, T. Shiozaki, R.Babbush, N. C. Rubin, ''[Reliably assessing the electronic structure of cytochrome P450 on today's classical computers and tomorrow's quantum computers](https://doi.org/10.1073/pnas.2203533119),'' *PNAS*, 2022, 119, e2203533119. 
 <p align="center">
   <img src="/assets/pub34toc.png" width="600"/>
 </p>
 
-**(33)** T. E. O'Brien, M. Streif, N. C. Rubin, R. Santagati, Y. Su, W. J. Huggins, **J. J. Goings**, N. Moll, E. Kyoseva, M. Degroote, C. S. Tautermann, J. Lee, D. W. Berry, N. Wiebe, R Babbush, ''[Efficient quantum computation of molecular forces and other energy gradients](https://arxiv.org/abs/2111.12437),'' *arXiv preprint*,  arXiv:2111.12437. 
+**(33)** T. E. O'Brien, M. Streif, N. C. Rubin, R. Santagati, Y. Su, W. J. Huggins, **J. J. Goings**, N. Moll, E. Kyoseva, M. Degroote, C. S. Tautermann, J. Lee, D. W. Berry, N. Wiebe, R Babbush, ''[Efficient quantum computation of molecular forces and other energy gradients](https://doi.org/10.1103/PhysRevResearch.4.043210),'' *Phys. Rev. Res.*,  4, 4, 043210. 
 
 **(32)** A. Lachowicz, E. H. Perez, N. S. Shuman, S. Ard, A. A. Viggiano, P. B. Armentrout, **J. J. Goings**, P. Sharma, X. Li, M. A. Johnson, ''[Determination of the SmO+ bond energy by threshold photodissociation of the cryogenically cooled ion](https://doi.org/10.1063/5.0068734),'' *J. Chem. Phys.*, 2021, 155, 174303. 
 
