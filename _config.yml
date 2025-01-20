@@ -21,7 +21,6 @@ pages_list:
   Blog: '/blog'
 #  Resume: '/assets/resume.pdf'
 #  CV: '/assets/CV.pdf'
-  Projects: '/projects'
   Publications: '/publications'
 #  Archive: '/archive'
 
