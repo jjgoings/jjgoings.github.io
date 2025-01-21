@@ -2,6 +2,10 @@
 layout: page
 title: Publications
 ---
+**(38)** L. Zhao, Q. Wang, **J. J. Goings**, K. Shin, W. Kyoung, S. Noh, Y. M. Rhee, K. Kim, ''[Enhancing the electron pair approximation with measurements on trapped-ion quantum computers](https://doi.org/10.1038/s41534-024-00871-4),'' *npj Quantum Inf.*, 2024, 10, 1--9.
+
+**(37)** **J. Goings**, L. Zhao, J. Jakowski, T. Morris, R. Pooser, ''[Molecular symmetry in VQE: A dual approach for trapped-ion simulations of benzene](https://doi.org/10.1109/QCE57702.2023.10187),'' *IEEE International Conference on Quantum Computing and Engineering (QCE)*, 2023, 76--82.
+
 **(36)** L. Zhao, **J. J. Goings**, K. Wright, J. Nguyen, J. Kim, S. Johri, K. Shin, W. Kyoung, J. I. Fuks, J-K. K. Rhee, Y. M. Rhee, ''[Orbital-optimized pair-correlated electron simulations on trapped-ion quantum computers](https://arxiv.org/abs/2212.02482),'' *arXiv preprint*, 2022, arXiv:2212.02482. 
 
 **(35)** A. W. Mills, **J. J. Goings**, D. Beck, C. Yang, X. Li, ''[Exploring Potential Energy Surfaces Using Reinforcement Machine Learning](https://doi.org/10.1021/acs.jcim.2c00373),'' *J. Chem. Inf. Model.*, 2022, 62, 13, 3169--3179. 
