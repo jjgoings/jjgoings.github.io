@@ -1,5 +1,5 @@
 source 'https://rubygems.org'
-gem "nokogiri", ">= 1.12.5"
+gem "nokogiri", ">= 1.15.5"
 gem 'rack', '~> 2.2.6'
 gem 'rspec'
 gem 'github-pages'
