@@ -5,6 +5,10 @@ title: Presentations
 
 Here you can find links to talks that I have given in the past, both formal and informal, starting from the most recent.
 
+**IEEE International Conference on Quantum Computing and Engineering (QCE)** \\
+*Bellevue, WA* (2023) \\
+["Molecular symmetry in VQE: A dual approach for trapped-ion simulations of benzene."](https://doi.org/10.1109/QCE57702.2023.10187)
+
 **Theory Group Meeting** \\
 *Seattle, WA* (2021) \\
 ["Reinforcement learning configuration interaction."](/assets/RLCI.pdf)
