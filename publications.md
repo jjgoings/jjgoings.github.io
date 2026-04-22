@@ -2,11 +2,21 @@
 layout: page
 title: Publications
 ---
-**(38)** L. Zhao, Q. Wang, **J. J. Goings**, K. Shin, W. Kyoung, S. Noh, Y. M. Rhee, K. Kim, ''[Enhancing the electron pair approximation with measurements on trapped-ion quantum computers](https://doi.org/10.1038/s41534-024-00871-4),'' *npj Quantum Inf.*, 2024, 10, 1--9.
+**(43)** W. Aboumrad, C. Girotto, **J. Goings**, L. Zhao, M. A. Lopez-Ruiz, D. Zhu, A. Kaushik, S. Ray, S. Sekwao, J. Iaconis, et al., ''[Measuring what matters: A scalable framework for application-level quantum benchmarking](https://arxiv.org/abs/2604.11781),'' *arXiv preprint*, 2026, arXiv:2604.11781.
 
-**(37)** **J. Goings**, L. Zhao, J. Jakowski, T. Morris, R. Pooser, ''[Molecular symmetry in VQE: A dual approach for trapped-ion simulations of benzene](https://doi.org/10.1109/QCE57702.2023.10187),'' *IEEE International Conference on Quantum Computing and Engineering (QCE)*, 2023, 76--82.
+**(42)** **J. J. Goings**, K. Shin, S. Noh, W. Kyoung, D. Kim, J. Baek, M. Roetteler, E. Epifanovsky, L. Zhao, ''[Molecular properties in quantum-classical auxiliary-field quantum Monte Carlo: Correlated sampling with application to accurate nuclear forces](https://doi.org/10.1021/acs.jctc.5c01351),'' *J. Chem. Theory Comput.*, 2025, 21, 24, 12573--12591.
 
-**(36)** L. Zhao, **J. J. Goings**, K. Wright, J. Nguyen, J. Kim, S. Johri, K. Shin, W. Kyoung, J. I. Fuks, J-K. K. Rhee, Y. M. Rhee, ''[Orbital-optimized pair-correlated electron simulations on trapped-ion quantum computers](https://arxiv.org/abs/2212.02482),'' *arXiv preprint*, 2022, arXiv:2212.02482. 
+**(41)** L. Zhao, **J. J. Goings**, W. Aboumrad, A. Arrasmith, L. Calderin, S. Churchill, D. Gabay, T. Harvey-Brown, M. Hiles, M. Kaja, et al., ''[Quantum-classical auxiliary field quantum Monte Carlo with matchgate shadows on trapped ion quantum computers](https://arxiv.org/abs/2506.22408),'' *arXiv preprint*, 2025, arXiv:2506.22408.
+
+**(40)** L. Zhao, Q. Wang, **J. J. Goings**, K. Shin, W. Kyoung, S. Noh, Y. M. Rhee, K. Kim, ''[Enhancing the electron pair approximation with measurements on trapped-ion quantum computers](https://doi.org/10.1038/s41534-024-00871-4),'' *npj Quantum Inf.*, 2024, 10, 76.
+
+**(39)** T. Lubinski, **J. J. Goings**, K. Mayer, S. Johri, N. Reddy, A. Mehta, N. Bhatia, S. Rappaport, D. Mills, C. H. Baldwin, et al., ''[Quantum algorithm exploration using application-oriented performance benchmarks](https://arxiv.org/abs/2402.08985),'' *arXiv preprint*, 2024, arXiv:2402.08985.
+
+**(38)** **J. Goings**, L. Zhao, J. Jakowski, T. Morris, R. Pooser, ''[Molecular symmetry in VQE: A dual approach for trapped-ion simulations of benzene](https://doi.org/10.1109/QCE57702.2023.10187),'' *IEEE International Conference on Quantum Computing and Engineering (QCE)*, 2023, 76--82.
+
+**(37)** L. Zhao, **J. Goings**, K. Shin, W. Kyoung, J. I. Fuks, J.-K. K. Rhee, Y. M. Rhee, K. Wright, J. Nguyen, J. Kim, S. Johri, ''[Orbital-optimized pair-correlated electron simulations on trapped-ion quantum computers](https://doi.org/10.1038/s41534-023-00730-8),'' *npj Quantum Inf.*, 2023, 9, 60.
+
+**(36)** E. Dimitrov, G. Sanchez-Sanz, J. Nelson, L. O'Riordan, M. Doyle, S. Courtney, V. Kannan, H. Naseri, A. G. Garcia, J. Tricker, ... **J. Goings**, et al., ''[Pushing the limits of quantum computing for simulating PFAS chemistry](https://arxiv.org/abs/2311.01242),'' *arXiv preprint*, 2023, arXiv:2311.01242.
 
 **(35)** A. W. Mills, **J. J. Goings**, D. Beck, C. Yang, X. Li, ''[Exploring Potential Energy Surfaces Using Reinforcement Machine Learning](https://doi.org/10.1021/acs.jcim.2c00373),'' *J. Chem. Inf. Model.*, 2022, 62, 13, 3169--3179. 
 
@@ -15,7 +25,7 @@ title: Publications
   <img src="/assets/pub34toc.png" width="600"/>
 </p>
 
-**(33)** T. E. O'Brien, M. Streif, N. C. Rubin, R. Santagati, Y. Su, W. J. Huggins, **J. J. Goings**, N. Moll, E. Kyoseva, M. Degroote, C. S. Tautermann, J. Lee, D. W. Berry, N. Wiebe, R Babbush, ''[Efficient quantum computation of molecular forces and other energy gradients](https://doi.org/10.1103/PhysRevResearch.4.043210),'' *Phys. Rev. Res.*,  4, 4, 043210. 
+**(33)** T. E. O'Brien, M. Streif, N. C. Rubin, R. Santagati, Y. Su, W. J. Huggins, **J. J. Goings**, N. Moll, E. Kyoseva, M. Degroote, C. S. Tautermann, J. Lee, D. W. Berry, N. Wiebe, R. Babbush, ''[Efficient quantum computation of molecular forces and other energy gradients](https://doi.org/10.1103/PhysRevResearch.4.043210),'' *Phys. Rev. Res.*, 2022, 4, 4, 043210. 
 
 **(32)** A. Lachowicz, E. H. Perez, N. S. Shuman, S. Ard, A. A. Viggiano, P. B. Armentrout, **J. J. Goings**, P. Sharma, X. Li, M. A. Johnson, ''[Determination of the SmO+ bond energy by threshold photodissociation of the cryogenically cooled ion](https://doi.org/10.1063/5.0068734),'' *J. Chem. Phys.*, 2021, 155, 174303. 
 
