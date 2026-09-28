@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 gem "nokogiri", ">= 1.15.5"
-gem 'rack', '~> 2'
+gem 'rack', '~> 3'
 gem 'rspec'
 gem 'github-pages'
 gem 'jekyll-paginate'
