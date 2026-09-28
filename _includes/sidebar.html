@@ -1,11 +1,12 @@
 
 
 <!-- Google search function -->
-<script language="Javascript" type="text/javascript">
-  function search_google() {
+<script>
+  function search_google(event) {
+    event.preventDefault();
     var query = document.getElementById("google-search").value;
-    window.open("http://google.com/search?q=" + query + "%20site:" +
-"http://joshuagoings.com");
+    var search = encodeURIComponent(query + " site:joshuagoings.com");
+    window.open("https://www.google.com/search?q=" + search, "_blank", "noopener,noreferrer");
   }
 </script>
 
@@ -17,7 +18,7 @@
 <div class="sidebar" id="sidebar">
   <div class="sidebar-item">
     <p>{{ site.description }}</p>
-      Search: <form onsubmit="search_google()" ><input type="text" id="google-search"></form>
+      Search: <form onsubmit="search_google(event)"><input type="text" id="google-search"></form>
   </div>
 
   <nav class="sidebar-nav">
