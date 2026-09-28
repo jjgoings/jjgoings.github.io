@@ -7,7 +7,7 @@ permalink:           pretty
 title:               Joshua Goings 
 #tagline:             ''
 #description:         ''
-url:                 http://joshuagoings.com
+url:                 https://joshuagoings.com
 baseurl:             ''
 paginate:            5
 paginate_path:       "/blog/page:num"

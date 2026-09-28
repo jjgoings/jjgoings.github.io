@@ -12,6 +12,8 @@ permissions:
 jobs:
   build:
     runs-on: ubuntu-latest
+    env:
+      JEKYLL_ENV: production
     steps:
       - uses: actions/checkout@v7
       - uses: ruby/setup-ruby@v1
