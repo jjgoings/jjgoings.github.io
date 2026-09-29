@@ -43,13 +43,11 @@ tbody tr:nth-child(odd) th {
 
 <p>Previously, I was a visiting researcher with <a href="https://quantumai.google/">Google Quantum AI</a>, where I evaluated the scope, cost, and scale of fault-tolerant quantum algorithms for industrial R&D. I have also worked as a postdoctoral fellow at the <a href="https://escience.washington.edu/people/13620/">University of Washington</a> and <a href="http://hammes-schiffer-group.org/">Yale</a>, where I conducted research at the intersection of computational chemistry, biology, and machine learning. I received my PhD in Theoretical and Computational Chemistry from <a href="http://uwligroup.org/">UW</a>, working on coupling electronic dynamics with relativistic electronic structure theory.</p>
 
-<p>I hope you find something useful here -- feel free to [email]({{ site.data.social-media.email.href }}{{ site.data.social-media.email.id }}) me any time!</p>
+<p>I hope you find something useful here -- feel free to connect with me on [LinkedIn]({{ site.data.social-media.linkedin.href }}{{ site.data.social-media.linkedin.id }})!</p>
 
 <center>
-<a href="{{ site.data.social-media.email.href }}{{ site.data.social-media.email.id }}" title="{{ site.data.social-media.email.title }}"><i class="fa {{ site.data.social-media.email.fa-icon }} fa-3x"></i></a>
 <a href="{{ site.data.social-media.github.href }}{{ site.data.social-media.github.id }}" title="{{ site.data.social-media.github.title }}"><i class="fa {{ site.data.social-media.github.fa-icon }} fa-3x"></i></a>
 <a href="{{ site.data.social-media.linkedin.href }}{{ site.data.social-media.linkedin.id }}" title="{{ site.data.social-media.linkedin.title }}"><i class="fa {{ site.data.social-media.linkedin.fa-icon }} fa-3x"></i></a>
-<a href="{{ site.data.social-media.stackexchange.href }}{{ site.data.social-media.stackexchange.id }}" title="{{ site.data.social-media.stackexchange.title }}"><i class="fa {{ site.data.social-media.stackexchange.fa-icon }} fa-3x"></i></a>
 </center>
 
 <!--
